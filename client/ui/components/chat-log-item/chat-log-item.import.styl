@@ -1,0 +1,41 @@
+chat-bubble-avatar-margin = 15px
+
+.ah-chat-log-item
+  display flex
+  min-height 36px
+  margin 12px 0
+
+  &.user
+    justify-content flex-end
+
+    .ah-chat-bubble
+      background-color color-background-dark
+      color color-background-light
+
+  .avatar
+    height 40px
+    width @height
+
+    & + .ah-chat-bubble
+      margin-left chat-bubble-avatar-margin
+
+  .ah-chat-bubble
+    display flex
+    align-items center
+    max-width 240px
+    padding 8px 20px
+    border-radius 25px
+    background-color color-background-medium
+    border 1px solid color-border-medium
+
+    color color-type-primary
+    font-family Arial, sans-serif
+    font-size 17px
+    letter-spacing 0.5px
+
+    +media-tablet()
+      max-width 350px
+
+    & + .avatar
+      margin-left chat-bubble-avatar-margin
+

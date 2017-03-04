@@ -1,0 +1,77 @@
+.ah-expanding-subsection
+  display flex
+  flex-direction column
+  margin 50px 0
+
+  .ah-expanding-subsection-title, .ah-expanding-subsection-subtitle
+    max-width 800px
+
+  .ah-expanding-subsection-button
+    display flex
+    align-items center
+    justify-content center
+    padding 10px 0
+    margin 20px 0
+    border 1px color-brand-tertiary
+    border-style solid none
+
+    h4
+      margin-bottom 0
+
+    i
+      margin 0 15px 5px
+      color color-brand-secondary
+      font-size 22px
+
+    .ah-row
+      flex 1
+      display flex
+      justify-content center
+      align-items center
+
+  .ah-expanding-subsection-details
+    display flex
+    flex-direction column
+    flex-wrap wrap
+    align-items center
+    justify-content center
+
+    margin 20px 0 30px
+
+    +media-tablet()
+      flex-direction row
+      align-items flex-start
+
+    .ah-expanding-subsection-detail-pane
+      flex 1 1 auto
+      display flex
+      flex-direction column
+      align-items center
+
+      padding 10px
+      margin 0 10px
+      width 250px
+      text-align center !important
+
+      hr
+        width 100%
+        margin 10px 0 !important
+        border none
+        background-color color-brand-primary-light !important
+
+      .ah-icon
+        position relative
+        margin 15px
+
+        .ah-circle-outline-tertiary
+          position absolute
+          top 0
+          left 0
+          height 75px
+          width @height
+          border 1px solid color-brand-tertiary
+          border-radius 50%
+
+      .ah-expanding-subsection-detail-title
+        width 100%
+        text-align start

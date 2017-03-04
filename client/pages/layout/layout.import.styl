@@ -1,0 +1,294 @@
+site-navbar-background-color = white
+site-navbar-border-height = 2px
+
+#ah-site-layout
+  font-size 16px
+
+  //a
+  //  &:hover
+  //    color color-brand-tertiary
+  //
+  //  &:active
+  //    color color-brand-primary-light
+
+  #ah-site-navbar
+    position fixed
+    top 0
+
+    display flex
+    align-items center
+
+    height height-navbar
+    width 100%
+    border-bottom site-navbar-border-height solid color-border-medium
+    background-color site-navbar-background-color
+    z-index 10
+
+    color color-type-secondary
+
+    +media-tablet()
+      justify-content space-between
+      padding 0 30px
+
+    +media-desktop()
+      padding 0 40px
+
+    nav
+      position absolute
+      left 0
+      bottom height-navbar
+      background-color site-navbar-background-color
+      width 100%
+      border-bottom 1px solid color-border-medium
+      z-index -1
+
+      transition all ease 0.6s
+
+      +media-tablet()
+        position relative
+        width auto
+        bottom auto
+        left auto
+        border-bottom none
+
+      &.open-nav
+        // TODO Compute this dynamically instead of hardcoding to the height of 4 nav items
+        bottom -238px
+
+        transition all ease 0.6s
+
+        +media-tablet()
+          bottom -248px
+
+      ul
+        width 100%
+        margin-bottom 0
+
+        li
+          display block
+          width 100%
+          padding 20px 10px
+
+          font-size 12px
+          text-align center
+
+    #ah-header-overflow-menu
+      position absolute
+      left 10
+
+      display flex
+      align-items center
+      justify-content center
+
+      height height-navbar - site-navbar-border-height
+      width 50px
+      background-color white
+
+      font-size 30px
+
+      cursor pointer
+
+      +media-tablet()
+        display none
+
+      &:hover
+        color color-brand-primary
+
+      &:active, &.active
+        color color-brand-primary-light
+
+    .ah-header-center
+      flex 1
+      display flex
+      align-items center
+      justify-content center
+      background-color white
+
+      +media-tablet()
+        justify-content flex-start
+
+      .ah-header-logo img
+        height 32px
+
+        margin-left 30px
+
+        +media-tablet()
+          margin-left 0
+
+    .ah-header-nav-items
+      //display none
+
+      +media-tablet()
+        position relative
+        display flex
+
+      .ah-header-nav-item
+        margin 0 10px
+
+        letter-spacing 0.5px
+        text-transform uppercase
+
+        a
+          height 100%
+          width 100%
+          color color-type-primary
+
+  #ah-site-content
+    display flex
+    flex-direction column
+
+    position fixed
+    top 75px
+    left 0
+    width 100%
+    height 'calc(100vh - %s)' % height-navbar
+    overflow-y auto
+    text-align center
+
+    -webkit-overflow-scrolling: touch
+
+    +media-tablet()
+      text-align start
+
+    h1, h2, h3, h4, h5
+      color color-type-primary
+      font-family 'Kessel 105', Arial, sans-serif
+      letter-spacing 1px
+      text-transform uppercase
+
+      +media-tablet()
+        max-width 1200px
+
+    h1
+      margin 0 30px
+      padding-bottom 20px
+      font-size 30px
+      font-weight bold
+      text-align center
+
+      color color-brand-primary-light
+
+      +media-tablet()
+        margin 0 80px
+        font-size 36px
+
+    h2
+      margin-bottom 15px
+
+      color color-brand-primary-light
+      font-size 24px
+      text-align center
+
+      +media-tablet()
+        text-align start
+        font-size 30px
+
+    h3, h4
+      font-family "Lato"
+      font-size 18px
+      text-transform uppercase
+
+      +media-tablet()
+        font-size 20px
+
+      +media-desktop()
+        font-size 24px
+
+    h4
+      color color-type-disabled
+
+    h5
+      font-size 16px
+
+    a
+      text-decoration none
+
+    section
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+      position relative
+      //background-color white
+      padding 60px 30px
+
+      +media-tablet()
+        padding 80px
+
+      arrow-triangle-height = 40px
+      arrow-border-width = 1px
+
+      &.ah-arrow-bottom
+
+        &:before, &:after
+          content ""
+          height 0
+          position absolute
+          width 0
+          border arrow-triangle-height solid transparent /* arrow size */
+
+
+        // Triangle
+        &:before
+          border-top-color white  /* arrow color */
+
+          position absolute
+          bottom -(arrow-triangle-height * 2 - arrow-border-width)
+          left 'calc(%s - %s)' % ((@width / 2) arrow-triangle-height)
+          z-index 3
+
+        &.ah-arrow-bottom-bordered
+          /* Arrow border */
+          &:after
+            border-top-color color-brand-tertiary  /* arrow color */
+
+            position absolute
+            bottom -(arrow-triangle-height * 2)
+            left 'calc(%s - %s)' % ((@width / 2) arrow-triangle-height)
+            z-index 2
+
+        &.ah-arrow-bottom-bg-light
+          &:before
+            border-top-color color-background-light  /* arrow color */
+
+      .ah-section-subtitle
+        padding-top 20px
+        border-top 2px solid color-border-medium
+
+    hr
+      height 2px
+      margin 30px 0
+      background-color color-background-medium
+
+      &.ah-color-dark
+        background-color color-background-dark
+
+      &.ah-large-margin
+        margin 60px 0
+
+    footer
+      min-height 100px
+
+    .ah-chat-log
+      display flex
+      flex-direction column
+      width 100%
+
+    .responsive-video-wrapper
+      height 0
+      padding-top 25px
+      padding-bottom 56.34% /* 16:9 ratio */
+      margin-bottom 10px
+      position relative
+      overflow hidden
+
+      &.vimeo
+        padding-top 0
+        margin-bottom 0 !important
+
+      video
+        top 0
+        left 0
+        width 100%
+        height 100%
+        position absolute

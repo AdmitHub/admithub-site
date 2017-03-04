@@ -1,0 +1,34 @@
+<template name="ExpandingSubsection">
+  <div class="ah-expanding-subsection">
+    <h2 class="ah-expanding-subsection-title {{ class }}">{{ title }}</h2>
+    <div class="ah-expanding-subsection-subtitle ah-type-primary">{{ subtitle }}</div>
+    {{#if isExpanded }}
+      <div class="ah-expanding-subsection-details animated fadeIn">
+        {{#each details}}
+          <div class="ah-expanding-subsection-detail-pane">
+            <div class="ah-icon">
+              <div class="ah-circle-outline-tertiary"></div>
+              <img src="{{ icon }}" alt="{{ altText }}">
+            </div>
+            <h5 class="ah-expanding-subsection-detail-title">{{ title }}</h5>
+            <hr class="ah-brand-primary">
+            <div class="ah-type-primary">{{ description }}</div>
+          </div>
+        {{/each}}
+      </div>
+      <button class="ah-expanding-subsection-button collapse">
+        <div class="ah-row">
+          <h4 class="text">Show Less</h4>
+          <i class="fa fa-chevron-up"></i>
+        </div>
+      </button>
+    {{else}}
+      <button class="ah-expanding-subsection-button expand">
+        <div class="ah-row">
+          <h4 class="text">Learn More</h4>
+          <i class="fa fa-chevron-down"></i>
+        </div>
+      </button>
+    {{/if}}
+  </div>
+</template>

@@ -1,0 +1,36 @@
+<template name="siteFooter">
+  <footer id="ah-site-footer">
+    <div class="ah-container-centered">
+      <div class="footer-subsections">
+        <div class="footer-subsection">
+          <div class="subsection-name">AdmitHub</div>
+          <a class="ah-footer-line" href="{{ pathFor 'aboutUs' }}">About</a>
+          <a class="ah-footer-line" href="http://blog.admithub.com/">Blog</a>
+          <a class="ah-footer-line" href="http://info.admithub.com/admithub-demo-request-college-chatbot">Contact Us</a>
+          {{> RequestDemoButton theme="dark" size="small" trackingId="site-footer" }}
+        </div>
+        <div class="footer-subsection">
+          <div class="subsection-name">Location</div>
+          <div class="ah-footer-line">AdmitHub</div>
+          <div class="ah-footer-line">Harvard Innovation Lab</div>
+          <div class="ah-footer-line">114 Western Avenue</div>
+          <div class="ah-footer-line">Boston, MA 02134</div>
+        </div>
+        <div class="footer-subsection">
+          <div class="subsection-name">Legal</div>
+          <a class="ah-footer-line" href="{{ pathFor "termsOfService" }}">Terms of Service</a>
+          <a class="ah-footer-line" href="{{ pathFor "privacyPolicy" }}">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="ah-footer-links-social">
+        <a class="ah-footer-line" href="https://facebook.com/admithub">
+          <i class="fa fa-facebook-square fa-3x"></i>
+        </a>
+        <a class="ah-footer-line" href="https://twitter.com/admithub">
+          <i class="fa fa-twitter-square fa-3x"></i>
+        </a>
+      </div>
+      <div class="ah-footer-copyright ah-type-primary">&copy; 2017 AdmitHub</div>
+    </div>
+  </footer>
+</template>

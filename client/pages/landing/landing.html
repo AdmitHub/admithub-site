@@ -1,0 +1,209 @@
+<template name='LandingPage'>
+  <div id="ah-landing-page">
+
+    <section id="ah-hero">
+      <div class="hero-title">Enrollment Success</div>
+      <div class="hero-subtitle">Powered by Artificial Intelligence</div>
+      <button class="show-more">
+        <i class="fa fa-chevron-down fa-2x"></i>
+      </button>
+      <!--{{> RequestDemoButton trackingId="section-hero" }}-->
+    </section>
+
+    <section id="ah-section-help-students" class="ah-border-top-brand-primary">
+      <div class="ah-container-centered">
+        <h1>Virtual Assistants boost enrollment outcomes</h1>
+        <div class="ah-row-wrap">
+          <div class="titled-paragraph">
+            <h3>Drive Engagement</h3>
+            <p>Use mobile messaging to meet students where they are. Promote conversation, track progress, measure results, and personally support at-risk students.</p>
+          </div>
+          <div class="titled-paragraph">
+            <h3>Extend Your Reach</h3>
+            <p>Your virtual assistant handles repetitive tasks and data collection, freeing your staff to focus on high-impact student support.</p>
+          </div>
+        </div>
+        <div class="ah-row-wrap">
+          <div class="titled-paragraph">
+            <h3>Build Meaningful Connections</h3>
+            <p>Use mobile messaging to meet students where they are. Promote conversation, track progress, measure results, and personally support at-risk students.</p>
+          </div>
+          <div class="titled-paragraph">
+            <h3>Impact Student Outcomes</h3>
+            <p>Timely encouragement, nudge reminders, and prompt assistance help students stay on track and bolster enrollment.</p>
+          </div>
+        </div>
+        {{> RequestDemoButton trackingId="section-help-students"}}
+      </div>
+    </section>
+
+    <section id="ah-section-gsu" class="ah-arrow-bottom">
+      <div class="ah-container-centered">
+        <h1>Meet Pounce — Georgia State’s Branded AI</h1>
+        <p class="ah-color-light">More conversation, less work, and proven results.</p>
+        <div class="quote ah-color-light">
+          <i class="fa fa-3x fa-quote-left"></i>
+          <div class="quote-text">AdmitHub was pivotal to helping Georgia State achieve our best enrollment results in school history. Without Pounce, we would have needed ten more full-time staff to accomplish the same magnitude of student engagement.</div>
+          <div class="quote-author">— Scott Burke, AVP of Undergraduate Admissions</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ah-section-gsu-case-study" class="">
+      <div class="ah-container-centered">
+        <h1>GSU Enrollment Case Study</h1>
+        <p>Based on a randomized controlled trial conducted by Lindsay C. Page, a professor at the University of Pittsburgh, and Hunter Gehlbach, a professor at UC Santa Barbara, students who had access to Pounce out-performed the control group in key metrics.</p>
+        <div class="case-study-stats">
+          <div class="ah-row-wrap">
+            {{> CaseStudyStat title="Orientation Attendance Up" percentage=3.3 }}
+            {{> CaseStudyStat title="Fewer FAFSA Verifications" percentage=17 }}
+          </div>
+          <div class="ah-row-wrap">
+            {{> CaseStudyStat title="Lower Summer Melt" percentage=21.4 }}
+            {{> CaseStudyStat title="Higher Attendance" percentage=3.9 }}
+          </div>
+        </div>
+        {{> RequestDemoButton trackingId="section-gsu-case-study"}}
+      </div>
+    </section>
+
+    <section id="ah-section-partners">
+      <div class="ah-container-centered">
+        <h1>Our Partners</h1>
+        <p>Create a virtual assistant that captures the spirit of your institution.</p>
+        {{> Carousel}}
+      </div>
+    </section>
+
+    <section id="ah-section-virtual-assistant" class="ah-arrow-bottom">
+      <div class="ah-container-centered">
+        <h1>A virtual assistant for your college</h1>
+        <p>Create a virtual assistant that captures the spirit of your institution.</p>
+      </div>
+      <div class="ah-chat-log">
+        {{> ChatLogItem sender="user" text="What makes a virtual assistant?" }}
+        {{> ChatLogItem sender="oli" text="Our technology is based on the same artificial intelligence that steers self-driving cars and helps doctors diagnose diseases with greater accuracy than ever before." }}
+        {{> ChatLogItem sender="user" text="How does a virtual assistant learn?" }}
+        {{> ChatLogItem sender="oli" text="Initial training begins with a brief questionnaire. Then, the more you and your students communicate through AdmitHub, the smarter your AI assistant becomes – learning all the ins and outs of how to help students at your institution." }}
+      </div>
+    </section>
+
+    <section id="ah-section-key-benefits" class="ah-arrow-bottom ah-arrow-bottom-bg-light">
+      <div class="ah-container-centered">
+        <h1>Fast, intuitive, data-driven, and secure</h1>
+        <div id="ah-key-features">
+          {{> KeyFeatureDetails title="Easy to Use" description="Set up your virtual assistant in as little as 24 hours. AdmitHub connects with your staff via email so there is no requirement to learn or even login to a new system." icon="images/icon-feature-.png" trackingId="section-1" }}
+          {{> KeyFeatureDetails title="Secure And Private" description="We understand how important privacy and security are to your institution. We are fully FERPA-compliant, and keep all your data secure through end-to-end encryption and database isolation."  icon="images/icon-feature-.png" trackingId="section-2" }}
+          {{> KeyFeatureDetails title="Data-Driven" description="Make informed decisions through observation of trends across population segments. Also, inspect conversations to track the progress and surface concerns of individuals." icon="images/icon-feature-.png" trackingId="section-3" }}
+          {{> KeyFeatureDetails title="Always Learning" description="Once set in motion, your virtual assistant never stops learning. Simply respond to student questions and watch it improve every day." icon="images/icon-feature-.png" trackingId="section-3" }}
+        </div>
+      </div>
+    </section>
+
+    <section id="ah-section-contact-us">
+      <div class="ah-container-centered">
+        <div class="ah-subsection ah-section-contact-us-cta">
+          <h1>Ready to find out more?</h1>
+          <h2>Let's start the conversation<span><i class="fa fa-chevron-right"></i></span></h2>
+        </div>
+        <form action="" class="ah-contact-us-form ah-subsection">
+          <div class="input-field">
+            <label for="contact-us-name">Name*</label>
+            <input id="contact-us-name" type="text"/>
+          </div>
+          <div class="input-field">
+            <label for="contact-us-email">Email*</label>
+            <input id="contact-us-email" type="text"/>
+          </div>
+          <div class="input-field">
+            <label for="contact-us-institution">Institution</label>
+            <input id="contact-us-institution" type="text"/>
+          </div>
+          <div class="input-field">
+            <label for="contact-us-title">Title</label>
+            <input id="contact-us-title" type="text"/>
+          </div>
+          {{> RequestDemoButton theme="secondary" size="small" type="submit" trackingId="section-contact-us" }}
+        </form>
+      </div>
+    </section>
+
+    <!--<section id="ah-section-fb-message-us">-->
+      <!--<div class="ah-container-centered">-->
+        <!--<h1>Are you a student?</h1>-->
+        <!--<p">Message Oli on Facebook</div>-->
+        <!--<div class="fb-messengermessageus" messenger_app_id="1431666527114264" page_id="1431666527114264" color="white" size="xlarge" >-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</section>-->
+  </div>
+</template>
+
+
+<template name="CaseStudyStat">
+  <div class="case-study-stat">
+    <h3>{{ title }}</h3>
+    <div class="pie-chart">
+      <div class="pie-slice" style="transform: rotate(calc({{ percentage }} * 0.01 * 360deg))"></div>
+      <div class="percentage">{{ percentage }}%</div>
+    </div>
+  </div>
+</template>
+
+<template name="KeyFeatureDetails">
+  <div class="key-feature-details">
+    <div class="text">
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+    </div>
+    <div class="icon">
+      <img src="{{ icon }}">
+    </div>
+  </div>
+</template>
+
+<template name="Carousel">
+  <div class="sponsors-wrapper">
+    <div id="carousel">
+      {{#each sponsors}}
+        <div class="sponsor">
+          <a href="{{ url }}" target="_blank">
+            <img src="{{ image_url }}" class="sponsor-image" alt="{{ name }}">
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+
+<template name="landingQuestions">
+  <ul class="ah-recently-asked-questions ah-container">
+    {{#each landingQuestionsData }}
+      <li class="ah-recently-asked-question">
+        <div class="question-container chat-item-group">
+          <div class="chat-item">
+            <div class="icon">Q</div>
+            <div class="text question">{{ question }}</div>
+          </div>
+        </div>
+        <div class="answer-container chat-item-group">
+          <div class="chat-item">
+            <div class="icon">A</div>
+            <div class="text answer">{{ answer }} <span><a href="https://college.admithub.com/posts/{{ postId }}" class="questions--readmore">Read more</a>
+  </span></div>
+          </div>
+          <div class="answer-author">
+            {{>avatar userId=userId class='questions--authorAvatar' shape='circle' }}
+            <div class="authp">
+              {{#with user}}
+                <div class="author-name">{{ telescope.displayName }}</div>
+                <div class="author-title">{{{ targetBlank profile.signatureHTML }}}</div>
+              {{/with}}
+            </div>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</template>

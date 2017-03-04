@@ -1,0 +1,47 @@
+.ah-request-demo-button
+  display block
+  //width 100%
+  padding 15px 40px
+  margin 0 20px
+  border 3px solid
+
+  color color-brand-primary-light
+  border-color @color
+
+  font-family 'Kessel 105 Bold', Arial, sans-serif
+  font-size 20px
+  letter-spacing 1px
+  text-align center
+  text-transform uppercase
+
+  cursor pointer
+  transition all ease 0.5s
+
+  +media-tablet()
+    width auto
+    font-size 24px
+
+  &:hover
+    box-shadow 0 0 5px 1px color-background-dark
+
+    transition all ease 0.5s
+
+  &:active, &.active
+    box-shadow 0 0 3px 1px color-background-dark
+
+    transition all ease 0.3s
+
+  &.secondary
+    background-color color-brand-secondary
+    border-color color-type-secondary
+    color color-type-secondary
+
+  &.dark
+    border-color color-brand-secondary
+    color color-brand-secondary
+
+  &.small
+    padding 10px 20px
+    font-size 16px
+    height 38px
+

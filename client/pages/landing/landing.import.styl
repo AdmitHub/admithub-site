@@ -1,0 +1,386 @@
+#ah-landing-page
+  display flex
+  flex-direction column
+  height 100%
+  width 100%
+  overflow-y auto
+
+  text-align center
+  color color-type-secondary
+
+  .ah-chat-log
+    display flex
+    flex-direction column
+    width 100%
+    max-width 450px
+    padding-bottom 30px
+    margin-bottom 40px
+    border-bottom 2px solid color-border-medium
+
+    +media-tablet()
+      max-width 600px
+
+  #ah-hero
+    display flex
+    flex-direction column
+    align-items center
+
+    height "calc(100vh - (%s))" % height-navbar
+    width 100%
+    padding 0 !important
+
+    background url(images/hero.png) no-repeat
+    background-size cover
+
+    +media-tablet()
+      background url(images/hero.png) no-repeat bottom center
+      background-size cover
+
+    .hero-title
+      color color-type-light
+      font-family "Kessel 105", Arial, sans-serif
+      font-size 48pt
+      font-weight bold
+      text-shadow 0 2px 5px color-background-dark
+
+      +media-desktop()
+        font-size 94pt
+
+    .hero-subtitle
+      color color-type-light
+      font-family "Kessel 105", Arial, sans-serif
+      font-size 24pt
+      text-transform uppercase
+      letter-spacing 1px
+
+      +media-desktop()
+        font-size 36pt
+        letter-spacing 5px
+
+    .show-more
+      color color-brand-secondary
+
+      i
+        width 24px
+        height 14px
+
+        font-size 24px
+
+        +media-tablet()
+          width 36px
+          height 24px
+
+          font-size 36px
+
+  #ah-section-help-students
+    .ah-row-wrap
+      width 100%
+
+    .titled-paragraph
+      display inline-block
+      min-width 200px
+      max-width 480px
+      margin 5px 0
+
+      text-align start
+
+      +media-desktop()
+        margin 10px 15px
+
+    .ah-request-demo-button
+      margin-top 30px
+
+      +media-tablet()
+        margin-top 50px
+
+  #ah-section-gsu
+    background radial-gradient(color-indigo, color-indigo-dark)
+
+    .quote
+      align-self flex-end
+      font-family "Lato"
+      text-align start
+
+      +media-desktop()
+        max-width 600px
+
+      i
+        +media-desktop()
+          font-size 80px
+
+      .quote-text
+        margin 30px 0 40px
+
+        font-size 20px
+
+        +media-tablet()
+          font-size 28px
+
+        +media-desktop()
+          font-size 36px
+
+      .quote-author
+        font-size 16px
+
+        +media-tablet()
+          font-size 18px
+
+        +media-desktop()
+          font-size 20px
+
+  #ah-section-gsu-case-study
+    .case-study-stats
+      display flex
+      flex-wrap wrap
+      justify-content center
+
+  #ah-section-key-benefits
+    background-color color-indigo
+
+  #ah-section-key-features
+    background-color color-brand-tertiary
+    color color-type-light
+
+    h1
+      color color-brand-secondary
+      margin-top 50px
+
+    .ah-section-subtitle
+      border-color color-brand-secondary !important
+
+  #ah-section-partners
+    padding-top 80px
+
+    .ah-section-subtitle
+      border-color color-brand-primary !important
+
+    .ah-container-centered
+      max-width 100%
+
+  #ah-section-contact-us
+    min-height 200px
+    background url(/users-on-phones.png)
+    background-size cover
+
+    h1, h3
+      color color-type-light
+
+    h3
+      display flex
+      white-space nowrap
+
+    i
+      margin-left 10px
+
+    .ah-container-centered
+      flex-wrap wrap
+
+      +media-desktop()
+        flex-direction row
+
+    .ah-section-subtitle
+      border-color color-brand-tertiary !important
+
+    .ah-subsection
+      flex 1
+      min-width 260px
+      margin 20px 0
+
+      +media-desktop()
+        margin 0 20px
+
+    .ah-section-contact-us-cta
+      display flex
+      flex-direction column
+      align-items center
+
+      h3
+        text-align center
+
+    .ah-request-demo-button
+      margin 20px
+      width 100%
+
+      +media-tablet()
+        margin 20px 0
+        width auto
+
+  #ah-section-recently-answered-questions
+    padding-bottom 0 !important
+
+    .ah-section-subtitle
+      border-color color-brand-secondary !important
+
+    .ah-device
+      width 100%
+      max-width 800px
+      margin 20px 20px 0
+
+      +media-tablet()
+        margin 50px 50px 0
+
+      .ah-device-outer, .ah-device-inner
+        border 1px solid color-brand-primary-light
+        border-bottom-color transparent
+
+      .ah-device-outer
+        display flex
+        flex-direction column
+        min-height 200px
+        border-radius 25px 25px 0 0
+        padding 50px 20px 0
+
+      .ah-device-screen
+        flex 1
+        position relative
+        display flex
+        flex-direction column
+        align-items center
+
+        background-color color-background-medium
+        border-radius 12px 12px 0 0
+
+        &::before
+          content ""
+          position absolute
+          top -30px
+          left (@width / 2)
+          border-radius 50%
+          height 10px
+          width @height
+          border 1px solid color-brand-primary
+
+      .ah-recently-asked-question
+        text-align start
+
+        .ah-type-primary
+          text-align start
+
+        .chat-item-group
+          margin 5px
+
+        .chat-item
+          display flex
+          margin 20px
+
+          color color-type-primary
+          font-size 12pt
+          vertical-align middle
+
+          .icon
+            background-color color-brand-tertiary
+            height 26px
+            min-width @height
+            border-radius 50%
+            margin-right 10px
+
+            color white
+            font-size 18px
+            text-align center
+
+        .answer-author
+          display flex
+          padding 10px
+          margin 10px
+          border-top 1px solid color-border-medium
+
+          .avatar
+            margin-right 15px
+            height 50px
+            min-width @height
+
+            .avatar-image
+              height 50px
+              min-width @height
+
+          .author-details
+            font-size 10pt
+
+            .author-name
+              font-weight bold
+
+            .author-title
+              font-size 9pt
+              letter-spacing 0.2px
+
+
+  .ah-logo-oli-lg
+    margin 30px
+
+  .case-study-stat
+    display inline-flex
+    flex-direction column
+    align-items center
+
+    width 250px
+    padding 20px
+
+    .pie-chart
+      position relative
+      display flex
+      align-items center
+      justify-content center
+
+      width 230px
+      height @width
+      border 1px solid #999
+      border-radius 50%
+      overflow hidden
+
+      background color-brand-tertiary
+      background-image linear-gradient(to right, transparent 50%, color-brand-secondary 0)
+
+      .pie-slice
+        position absolute
+        top 0
+        left 0
+
+        height 100%
+        width 100%
+        margin-left 50%
+
+        background-color color-brand-tertiary
+
+        transform-origin left
+
+      .percentage
+        display flex
+        align-items center
+        justify-content center
+
+        width 65%
+        height @width
+        border 1px solid #999
+        border-radius 50%
+        z-index 10
+
+        background-color white
+        color color-type-primary
+
+        font-family "Kessel 105"
+        font-size 52px
+        font-weight bold
+
+  .sponsors-wrapper
+    width 100%
+
+    .sponsor
+      display: inline-block
+      margin: 1rem
+      padding: 1rem
+      text-align: center
+      background-color: white
+      @media mq-sm-desk
+        width: calc(50% - 2rem)
+      @media mq-xsm-desk
+        width: calc(100% - 2rem)
+      img
+        display block
+        margin auto
+
+    .sponsor-image
+      max-height: 100px
+
+      filter: grayscale(100%)
+      padding: 1rem
+      background-blend-mode: multiply

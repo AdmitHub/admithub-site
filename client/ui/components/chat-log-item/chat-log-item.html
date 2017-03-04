@@ -1,0 +1,19 @@
+<template name="ChatLogItem">
+  <div class="ah-chat-log-item {{ sender }}">
+    {{#if $eq sender 'oli'}}
+      <div class="avatar">
+        <img src="/landingIcons/icon-oli-circle.png" alt="Oli Avatar">
+      </div>
+      <div class="ah-chat-bubble">
+        <div class="text">{{ text }}</div>
+      </div>
+    {{else}}
+      <div class="ah-chat-bubble dark">
+        <div class="text">{{ text }}</div>
+      </div>
+      <div class="avatar">
+        <img src="/landingIcons/icon-user-circle.png" alt="Student Avatar">
+      </div>
+    {{/if}}
+  </div>
+</template>

@@ -1,0 +1,71 @@
+footer#ah-site-footer
+  //position absolute
+  display flex
+  align-items center
+  justify-content center
+
+  background-color color-brand-primary-dark
+  //width 100%
+  padding 30px 20px 80px
+
+  color color-type-light !important
+
+  +media-tablet()
+    padding 50px 30px 80px
+
+  .ah-logo
+    height 75px
+    width @height
+    margin 10px
+
+    +media-tablet()
+      margin 20px
+
+  .ah-footer-links
+    display flex
+    flex-direction column
+    align-items center
+
+    color color-type-light
+
+  .ah-footer-link
+    color color-type-light
+
+  .ah-footer-links-site
+    display flex
+    flex-wrap wrap
+    justify-content center
+
+    .ah-footer-link
+      padding 1px
+      margin 5px 10px
+      border-bottom 2px solid color-type-light
+
+      color color-type-light
+      font-size 14px
+      line-height @font-size + 6px
+      text-transform uppercase
+
+  .ah-footer-links-social
+    margin 20px 8px 30px
+
+    .ah-footer-link
+      margin auto 8px
+
+  .ah-footer-links-company
+    margin 10px 8px 20px
+
+    .ah-footer-link
+      margin auto 6px
+
+      font-size 9pt
+      text-transform uppercase
+      border-bottom 1px solid color-type-light
+
+  .ah-footer-copyright
+    font-size 9pt
+
+
+
+
+

@@ -1,0 +1,64 @@
+{
+  "recaptcha_private": "6LcebAoTAAAAAI3lihuJLrKrEp02X67vQdDkZ4T4",
+  "MAIL_URL": "",
+  "twilio": {
+    "accountSid": " ",
+    "authToken": " "
+  },
+  "kadira": {
+    "appId": " ",
+    "appSecret": " "
+  },
+  "oli": {
+    "handleWebMessage": "https://xyz.localtunnel.me/api/handleWebMessage",
+    "initiate": "https://xyz.localtunnel.me/api/initiate",
+    "coldSMS": "https://xyz.localtunnel.me/api/coldSMS"
+  },
+  "forum_url": "https://college.admithub.com/posts/",
+  "public": {
+    "sharedAuthDomains": [""],
+    "mobileThreshold": 550,
+    "segment": {
+      "write_key": " "
+    },
+    "recaptcha_public": " ",
+    "eventReportDownloadTimeout": "48:0:0"
+  },
+  "logging": {
+    "level": "info",
+    "papertrail_host": "logs3.papertrailapp.com",
+    "papertrail_port": 19324
+  },
+  "idleBot": {
+    "similarityThreshold": 0.85
+  },
+  "eventBot": {
+    "maxReminders": 2
+  },
+  "mailChimp": {
+    "api_key": "<Your MailChimp API Key>",
+    "list_id": "<ID of your default mailing list>"
+  },
+  "s3": {
+    "region": " ",
+    "accessKeyId": " ",
+    "secretAccessKey": " ",
+    "acl": " ",
+    "bucket": " "
+  },
+  "google_client": {
+    "service_account_email": "",
+    "private_key": "",
+    "drive_account_email": ""
+  },
+  "essayBot": {
+    "essaysFolderId": "0B6rcgCn..."
+  },
+  "salesDemo": {
+    "maxReminders": 2
+  },
+  "PrerenderIO": {
+    "token": "yourtoken"
+  },
+  "hubSpotKey": " "
+}
