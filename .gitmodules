@@ -1,3 +1,0 @@
-[submodule "packages/admithub-common"]
-	path = packages/admithub-common
-	url = git@github.com:AdmitHub/admithub-common.git
