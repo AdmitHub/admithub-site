@@ -1,81 +1,80 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+
 <template name='Layout'>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  </head>
-  <body>
-    <!--{{> typekit}}-->
-    <div id="ah-site-layout">
-      <header id="ah-site-navbar">
-        <div id="ah-header-overflow-menu">
-          <i class="icon-hamburger"></i>
-        </div>
+  <!--{{> typekit}}-->
+  <div id="ah-site-layout">
+    <header id="ah-site-navbar">
+      <div id="ah-header-overflow-menu">
+        <i class="icon-hamburger"></i>
+      </div>
 
-        <!--<nav id="ah-header-nav-left">-->
-        <!--<ul class="ah-header-nav-items">-->
-        <!--<li class="ah-header-nav-item">-->
-        <!--<a href="/about" class="ah-header-link">About</a>-->
-        <!--</li>-->
-        <!--<li class="ah-header-nav-item">-->
-        <!--<a href="https://college.admithub.com" class="ah-header-link">Forum</a>-->
-        <!--</li>-->
-        <!--<li class="ah-header-nav-item">-->
-        <!--<a href='/podcast' id="newOrExistingUser" class="ah-header-link">Podcast</a>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</nav>-->
+      <!--<nav id="ah-header-nav-left">-->
+      <!--<ul class="ah-header-nav-items">-->
+      <!--<li class="ah-header-nav-item">-->
+      <!--<a href="/about" class="ah-header-link">About</a>-->
+      <!--</li>-->
+      <!--<li class="ah-header-nav-item">-->
+      <!--<a href="https://college.admithub.com" class="ah-header-link">Forum</a>-->
+      <!--</li>-->
+      <!--<li class="ah-header-nav-item">-->
+      <!--<a href='/podcast' id="newOrExistingUser" class="ah-header-link">Podcast</a>-->
+      <!--</li>-->
+      <!--</ul>-->
+      <!--</nav>-->
 
-        <div class="ah-header-center">
-          <a href="/" class="ah-header-logo">
-            <img src="/images/admithub_logo_2x.png">
-          </a>
-        </div>
+      <div class="ah-header-center">
+        <a href="/" class="ah-header-logo">
+          <img src="/images/admithub_logo_2x.png">
+        </a>
+      </div>
 
-        <nav id="ah-header-nav-right">
-          <ul class="ah-header-nav-items">
-            <!--TODO Revive user account nav link?-->
-            <!--{{#if currentUser}}-->
-            <!--{{> userMenu }}-->
-            <!--{{/if}}-->
-            <li class="ah-header-nav-item">
-              <a href="/about" class="ah-header-link">About</a>
-            </li>
-            <li class="ah-header-nav-item">
-              <a href='http://blog.admithub.com/' id="newOrExistingUser" class="ah-header-link">Blog</a>
-            </li>
-            <li class="ah-header-nav-item">
-              <a href='http://blog.admithub.com/student/topic/podcast' id="newOrExistingUser" class="ah-header-link">Podcast</a>
-            </li>
-            <li class="ah-header-nav-item">
-              <a href="https://college.admithub.com" class="ah-header-link">Forum</a>
-            </li>
-            <li class="ah-header-nav-item">
-              {{> RequestDemoButton theme="dark" size="small" trackingId="site-navbar"}}
-            </li>
-          </ul>
-        </nav>
-        <!--</div>-->
-        <!--<div class="ah-header-region">-->
-        <!--<div class="grid-wrap">-->
-        <!--{{> header }}-->
-        <!--</div>-->
-        <!--</div>-->
-      </header>
-      <div id="ah-site-content">
-        <div id="ah-site-content-main" class="template-{{currentPage}} yield">
-          {{> Template.dynamic template=pageContent }}
+      <nav id="ah-header-nav-right">
+        <ul class="ah-header-nav-items">
+          <!--TODO Revive user account nav link?-->
+          <!--{{#if currentUser}}-->
+          <!--{{> userMenu }}-->
+          <!--{{/if}}-->
+          <li class="ah-header-nav-item">
+            <a href="/about" class="ah-header-link">About</a>
+          </li>
+          <li class="ah-header-nav-item">
+            <a href='http://blog.admithub.com/' id="newOrExistingUser" class="ah-header-link">Blog</a>
+          </li>
+          <li class="ah-header-nav-item">
+            <a href='http://blog.admithub.com/student/topic/podcast' id="newOrExistingUser" class="ah-header-link">Podcast</a>
+          </li>
+          <li class="ah-header-nav-item">
+            <a href="https://college.admithub.com" class="ah-header-link">Forum</a>
+          </li>
+          <li class="ah-header-nav-item">
+            {{> RequestDemoButton size="small" trackingId="site-navbar"}}
+          </li>
+        </ul>
+      </nav>
+      <!--</div>-->
+      <!--<div class="ah-header-region">-->
+      <!--<div class="grid-wrap">-->
+      <!--{{> header }}-->
+      <!--</div>-->
+      <!--</div>-->
+    </header>
+    <div id="ah-site-content">
+      <div id="ah-site-content-main" class="template-{{currentPage}} yield">
+        {{> Template.dynamic template=pageContent }}
 
-          <!--{{#unless hideChat}}-->
-          <!--{{> chatIcon}}-->
-          <!--{{> chatSidebar}}-->
-          <!--{{/unless}}-->
-          <!---->
-          <!--{{#unless isSlashChat}}-->
-          {{> siteFooter }}
-          <!--{{/unless}}-->
+        <!--{{#unless hideChat}}-->
+        <!--{{> chatIcon}}-->
+        <!--{{> chatSidebar}}-->
+        <!--{{/unless}}-->
+        <!---->
+        <!--{{#unless isSlashChat}}-->
+        {{> siteFooter }}
+        <!--{{/unless}}-->
 
-          <!--{{> modal}}-->
-        </div>
+        <!--{{> modal}}-->
       </div>
     </div>
-  </body>
+  </div>
 </template>

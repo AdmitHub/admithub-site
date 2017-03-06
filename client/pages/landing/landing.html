@@ -5,7 +5,7 @@
       <div class="hero-title">Enrollment Success</div>
       <div class="hero-subtitle">Powered by Artificial Intelligence</div>
       <button class="show-more">
-        <i class="fa fa-chevron-down fa-2x"></i>
+        <img src="images/icons/icon-chevron-down.svg"/>
       </button>
       <!--{{> RequestDemoButton trackingId="section-hero" }}-->
     </section>
@@ -37,7 +37,7 @@
       </div>
     </section>
 
-    <section id="ah-section-gsu" class="ah-arrow-bottom">
+    <section id="ah-section-gsu" class="ah-arrow-bottom ah-arrow-bottom-indigo-dark">
       <div class="ah-container-centered">
         <h1>Meet Pounce — Georgia State’s Branded AI</h1>
         <p class="ah-color-light">More conversation, less work, and proven results.</p>
@@ -75,10 +75,10 @@
       </div>
     </section>
 
-    <section id="ah-section-virtual-assistant" class="ah-arrow-bottom">
+    <section id="ah-section-virtual-assistant" class="ah-arrow-bottom ah-arrow-bottom-transparent">
       <div class="ah-container-centered">
-        <h1>A virtual assistant for your college</h1>
-        <p>Create a virtual assistant that captures the spirit of your institution.</p>
+        <h1 class="ah-color-light">A virtual assistant for your college</h1>
+        <p class="ah-color-light">Create a virtual assistant that captures the spirit of your institution.</p>
       </div>
       <div class="ah-chat-log">
         {{> ChatLogItem sender="user" text="What makes a virtual assistant?" }}
@@ -88,14 +88,14 @@
       </div>
     </section>
 
-    <section id="ah-section-key-benefits" class="ah-arrow-bottom ah-arrow-bottom-bg-light">
+    <section id="ah-section-key-benefits" class="ah-arrow-bottom ah-arrow-bottom-indigo">
       <div class="ah-container-centered">
         <h1>Fast, intuitive, data-driven, and secure</h1>
         <div id="ah-key-features">
-          {{> KeyFeatureDetails title="Easy to Use" description="Set up your virtual assistant in as little as 24 hours. AdmitHub connects with your staff via email so there is no requirement to learn or even login to a new system." icon="images/icon-feature-.png" trackingId="section-1" }}
-          {{> KeyFeatureDetails title="Secure And Private" description="We understand how important privacy and security are to your institution. We are fully FERPA-compliant, and keep all your data secure through end-to-end encryption and database isolation."  icon="images/icon-feature-.png" trackingId="section-2" }}
-          {{> KeyFeatureDetails title="Data-Driven" description="Make informed decisions through observation of trends across population segments. Also, inspect conversations to track the progress and surface concerns of individuals." icon="images/icon-feature-.png" trackingId="section-3" }}
-          {{> KeyFeatureDetails title="Always Learning" description="Once set in motion, your virtual assistant never stops learning. Simply respond to student questions and watch it improve every day." icon="images/icon-feature-.png" trackingId="section-3" }}
+          {{> KeyFeatureDetails title="Easy to Use" description="Set up your virtual assistant in as little as 24 hours. AdmitHub connects with your staff via email so there is no requirement to learn or even login to a new system." icon="images/icons/speed-icon-gregor-cresnar-nonu-project.svg" trackingId="section-1" }}
+          {{> KeyFeatureDetails title="Secure And Private" description="We understand how important privacy and security are to your institution. We are fully FERPA-compliant, and keep all your data secure through end-to-end encryption and database isolation." icon="images/icons/secure-icon-yazmin-alanis-noun-project.svg" inverse=true trackingId="section-2" }}
+          {{> KeyFeatureDetails title="Data-Driven" description="Make informed decisions through observation of trends across population segments. Also, inspect conversations to track the progress and surface concerns of individuals." icon="images/icons/learning-icon-befris-noun-project.svg" trackingId="section-3" }}
+          {{> KeyFeatureDetails title="Always Learning" description="Once set in motion, your virtual assistant never stops learning. Simply respond to student questions and watch it improve every day." icon="images/icons/data-icon-vectors-market-noun-project.svg" inverse=true trackingId="section-3" }}
         </div>
       </div>
     </section>
@@ -104,15 +104,15 @@
       <div class="ah-container-centered">
         <div class="ah-subsection ah-section-contact-us-cta">
           <h1>Ready to find out more?</h1>
-          <h2>Let's start the conversation<span><i class="fa fa-chevron-right"></i></span></h2>
+          <h2>Let's start the conversation.</h2>
         </div>
         <form action="" class="ah-contact-us-form ah-subsection">
           <div class="input-field">
-            <label for="contact-us-name">Name*</label>
+            <label for="contact-us-name">Name</label>
             <input id="contact-us-name" type="text"/>
           </div>
           <div class="input-field">
-            <label for="contact-us-email">Email*</label>
+            <label for="contact-us-email">Email</label>
             <input id="contact-us-email" type="text"/>
           </div>
           <div class="input-field">
@@ -123,7 +123,7 @@
             <label for="contact-us-title">Title</label>
             <input id="contact-us-title" type="text"/>
           </div>
-          {{> RequestDemoButton theme="secondary" size="small" type="submit" trackingId="section-contact-us" }}
+          {{> RequestDemoButton text="Learn More" theme="secondary" size="small" type="submit" trackingId="section-contact-us" }}
         </form>
       </div>
     </section>
@@ -151,7 +151,7 @@
 </template>
 
 <template name="KeyFeatureDetails">
-  <div class="key-feature-details">
+  <div class="key-feature-details {{#if inverse}} inverse {{/if}}">
     <div class="text">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>

@@ -1,18 +1,23 @@
+height-button = 55px
+
 .ah-request-demo-button
   display block
   //width 100%
-  padding 15px 40px
+  height height-button !important
+  padding 0 40px
   margin 0 20px
   border 3px solid
 
   color color-brand-primary-light
   border-color @color
 
-  font-family 'Kessel 105 Bold', Arial, sans-serif
+  font-family 'Kessel 105 Bold', Arial, sans-serif !important
   font-size 20px
   letter-spacing 1px
+  line-height height-button
   text-align center
   text-transform uppercase
+  white-space nowrap
 
   cursor pointer
   transition all ease 0.5s
@@ -33,15 +38,15 @@
 
   &.secondary
     background-color color-brand-secondary
-    border-color color-type-secondary
-    color color-type-secondary
+    border-color color-indigo
+    color color-indigo
 
   &.dark
     border-color color-brand-secondary
     color color-brand-secondary
 
-  &.small
-    padding 10px 20px
-    font-size 16px
-    height 38px
+  //&.small
+  //  padding 10px 20px
+  //  font-size 16px
+  //  height 38px
 

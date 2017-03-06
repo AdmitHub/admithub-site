@@ -8,6 +8,12 @@
   text-align center
   color color-type-secondary
 
+  .ah-request-demo-button
+    margin-top 30px
+
+    +media-tablet()
+      margin-top 50px
+
   .ah-chat-log
     display flex
     flex-direction column
@@ -15,25 +21,32 @@
     max-width 450px
     padding-bottom 30px
     margin-bottom 40px
-    border-bottom 2px solid color-border-medium
 
     +media-tablet()
       max-width 600px
+
+    +media-desktop()
+      max-width 800px
 
   #ah-hero
     display flex
     flex-direction column
     align-items center
+    justify-content flex-end !important
 
     height "calc(100vh - (%s))" % height-navbar
     width 100%
     padding 0 !important
 
     background url(images/hero.png) no-repeat
+    background-color color-indigo
+    background-blend-mode multiply
     background-size cover
 
     +media-tablet()
       background url(images/hero.png) no-repeat bottom center
+      background-color color-indigo
+      background-blend-mode multiply
       background-size cover
 
     .hero-title
@@ -58,7 +71,11 @@
         letter-spacing 5px
 
     .show-more
+      margin 40px 10px 20px
       color color-brand-secondary
+
+      +media-desktop()
+        margin 80px 20px 50px
 
       i
         width 24px
@@ -86,12 +103,6 @@
 
       +media-desktop()
         margin 10px 15px
-
-    .ah-request-demo-button
-      margin-top 30px
-
-      +media-tablet()
-        margin-top 50px
 
   #ah-section-gsu
     background radial-gradient(color-indigo, color-indigo-dark)
@@ -137,16 +148,17 @@
   #ah-section-key-benefits
     background-color color-indigo
 
-  #ah-section-key-features
-    background-color color-brand-tertiary
-    color color-type-light
+  #ah-section-virtual-assistant
+    background url(images/speech-bubble-background.jpg) no-repeat center right
+    background-color color-indigo-dark
+    background-blend-mode overlay
+    background-size cover
 
-    h1
-      color color-brand-secondary
-      margin-top 50px
-
-    .ah-section-subtitle
-      border-color color-brand-secondary !important
+    +media-tablet()
+      background url(images/speech-bubble-background.jpg) no-repeat center right
+      background-color color-indigo-dark
+      background-blend-mode overlay
+      background-size cover
 
   #ah-section-partners
     padding-top 80px
@@ -159,18 +171,21 @@
 
   #ah-section-contact-us
     min-height 200px
-    background url(/users-on-phones.png)
-    background-size cover
 
-    h1, h3
-      color color-type-light
+    h1, h2
+      width 100%
+      margin 0
 
-    h3
-      display flex
-      white-space nowrap
+      text-align start
+
+    h1
+      padding-bottom 10px
 
     i
       margin-left 10px
+
+    form
+      width 100%
 
     .ah-container-centered
       flex-wrap wrap
@@ -199,11 +214,10 @@
 
     .ah-request-demo-button
       margin 20px
-      width 100%
 
       +media-tablet()
         margin 20px 0
-        width auto
+        //width auto
 
   #ah-section-recently-answered-questions
     padding-bottom 0 !important
@@ -360,6 +374,44 @@
         font-family "Kessel 105"
         font-size 52px
         font-weight bold
+
+  .key-feature-details
+    display flex
+    flex-wrap wrap-reverse
+    justify-content center
+
+    padding 30px 10px
+
+    +media-desktop()
+      padding 60px 20px
+
+    &.inverse
+      flex-direction row-reverse
+
+    .text
+      max-width 480px
+
+      +media-desktop()
+        text-align start
+
+      h3, p
+        color color-type-light !important
+
+    .icon
+      display flex
+      align-items center
+      justify-content center
+
+      width 180px
+      height @width
+      margin 0 50px
+
+      +media-tablet()
+        margin 0 100px
+
+      img
+        width 100%
+        height @width
 
   .sponsors-wrapper
     width 100%

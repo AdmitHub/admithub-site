@@ -2,24 +2,20 @@ site-navbar-background-color = white
 site-navbar-border-height = 2px
 
 #ah-site-layout
+  height 100vh
   font-size 16px
-
-  //a
-  //  &:hover
-  //    color color-brand-tertiary
-  //
-  //  &:active
-  //    color color-brand-primary-light
 
   #ah-site-navbar
     position fixed
     top 0
+    left 0
+    right 0
 
     display flex
     align-items center
 
     height height-navbar
-    width 100%
+    //width 100%
     border-bottom site-navbar-border-height solid color-border-medium
     background-color site-navbar-background-color
     z-index 10
@@ -44,7 +40,7 @@ site-navbar-border-height = 2px
 
       transition all ease 0.6s
 
-      +media-tablet()
+      +media-desktop()
         position relative
         width auto
         bottom auto
@@ -74,7 +70,7 @@ site-navbar-border-height = 2px
 
     #ah-header-overflow-menu
       position absolute
-      left 10
+      right 10px
 
       display flex
       align-items center
@@ -88,7 +84,7 @@ site-navbar-border-height = 2px
 
       cursor pointer
 
-      +media-tablet()
+      +media-desktop()
         display none
 
       &:hover
@@ -104,7 +100,7 @@ site-navbar-border-height = 2px
       justify-content center
       background-color white
 
-      +media-tablet()
+      +media-desktop()
         justify-content flex-start
 
       .ah-header-logo img
@@ -112,13 +108,13 @@ site-navbar-border-height = 2px
 
         margin-left 30px
 
-        +media-tablet()
+        +media-desktop()
           margin-left 0
 
     .ah-header-nav-items
-      //display none
+      margin 0
 
-      +media-tablet()
+      +media-desktop()
         position relative
         display flex
 
@@ -126,12 +122,14 @@ site-navbar-border-height = 2px
         margin 0 10px
 
         letter-spacing 0.5px
-        text-transform uppercase
 
-        a
-          height 100%
-          width 100%
+        a:not(.ah-request-demo-button)
+          line-height 55px
+          //width 100%
+
           color color-type-primary
+          font-family "Lato", Arial, sans-serif
+          font-size 20px
 
   #ah-site-content
     display flex
@@ -154,7 +152,6 @@ site-navbar-border-height = 2px
       color color-type-primary
       font-family 'Kessel 105', Arial, sans-serif
       letter-spacing 1px
-      text-transform uppercase
 
       +media-tablet()
         max-width 1200px
@@ -165,6 +162,7 @@ site-navbar-border-height = 2px
       font-size 30px
       font-weight bold
       text-align center
+      text-transform uppercase
 
       color color-brand-primary-light
 
@@ -175,8 +173,9 @@ site-navbar-border-height = 2px
     h2
       margin-bottom 15px
 
-      color color-brand-primary-light
+      color color-type-secondary
       font-size 24px
+      font-weight lighter
       text-align center
 
       +media-tablet()
@@ -250,6 +249,18 @@ site-navbar-border-height = 2px
         &.ah-arrow-bottom-bg-light
           &:before
             border-top-color color-background-light  /* arrow color */
+
+        &.ah-arrow-bottom-indigo
+          &:before
+            border-top-color color-indigo  /* arrow color */
+
+        &.ah-arrow-bottom-indigo-dark
+          &:before
+            border-top-color color-indigo-dark  /* arrow color */
+
+        &.ah-arrow-bottom-transparent
+          &:before
+            border-top-color transparent  /* arrow color */
 
       .ah-section-subtitle
         padding-top 20px

@@ -5,19 +5,18 @@ chat-bubble-avatar-margin = 15px
   min-height 36px
   margin 12px 0
 
-  &.user
+  &.oli
     justify-content flex-end
 
     .ah-chat-bubble
-      background-color color-background-dark
-      color color-background-light
+      background-color color-background-medium
 
-  .avatar
-    height 40px
-    width @height
+      text-align end
 
-    & + .ah-chat-bubble
-      margin-left chat-bubble-avatar-margin
+      opacity 1
+
+      p
+        color color-type-secondary
 
   .ah-chat-bubble
     display flex
@@ -25,17 +24,27 @@ chat-bubble-avatar-margin = 15px
     max-width 240px
     padding 8px 20px
     border-radius 25px
-    background-color color-background-medium
-    border 1px solid color-border-medium
 
-    color color-type-primary
+    background-color color-brand-primary
+
     font-family Arial, sans-serif
-    font-size 17px
+    font-size 16px
     letter-spacing 0.5px
+    text-align start
+
+    opacity 0.85
+
+    p
+      color color-type-light
 
     +media-tablet()
       max-width 350px
 
-    & + .avatar
-      margin-left chat-bubble-avatar-margin
+      p
+        font-size 20px
 
+    +media-desktop()
+      max-width 480px
+
+      p
+        font-size 24px

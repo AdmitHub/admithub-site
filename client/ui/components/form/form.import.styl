@@ -4,15 +4,27 @@ form
   .input-field
     display flex
     flex-direction column
-    margin 10px 0
+    margin 20px 0
+
+    font-family "Lato", Arial, sans-serif
 
     input
-      height 35px
+      height 52px
+      border 3px solid color-border-medium
+
+      +media-desktop()
+        height 64px
 
     label
       margin-bottom 4px
 
-      font-size 14px
+      color color-type-primary
+      font-size 16px
       letter-spacing 0.5px
       text-align start
-      text-transform uppercase
+
+      +media-tablet()
+        font-size 18px
+
+      +media-desktop()
+        font-size 20px
