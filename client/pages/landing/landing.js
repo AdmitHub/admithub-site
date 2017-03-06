@@ -349,7 +349,7 @@ Template.LandingPage.events({
   }
 });
 
-Template.carousel.onCreated(function() {
+Template.Carousel.onCreated(function() {
   this.subscribe("sponsors");
   this.autorun(function() {
     if (this.subscriptionsReady()) {
@@ -374,7 +374,7 @@ Template.carousel.onCreated(function() {
   }.bind(this));
 });
 
-Template.carousel.helpers({
+Template.Carousel.helpers({
   sponsors: function() {
     return Sponsors.find().fetch();
   }

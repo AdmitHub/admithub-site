@@ -50,6 +50,8 @@
       background-size cover
 
     .hero-title
+      padding 0 16px
+
       color color-type-light
       font-family "Kessel 105", Arial, sans-serif
       font-size 48pt
@@ -60,9 +62,11 @@
         font-size 94pt
 
     .hero-subtitle
+      padding 0 20px
       color color-type-light
       font-family "Kessel 105", Arial, sans-serif
       font-size 24pt
+      font-weight lighter
       text-transform uppercase
       letter-spacing 1px
 
@@ -90,6 +94,14 @@
           font-size 36px
 
   #ah-section-help-students
+
+    background url(images/network-background.png) no-repeat bottom right
+    background-size cover
+
+    +media-tablet()
+      background url(images/network-background.png) no-repeat bottom center
+      background-size cover
+
     .ah-row-wrap
       width 100%
 
@@ -105,7 +117,14 @@
         margin 10px 15px
 
   #ah-section-gsu
-    background radial-gradient(color-indigo, color-indigo-dark)
+    background url(images/pounce.png) no-repeat top left, radial-gradient(color-indigo, color-indigo-dark)
+    background-blend-mode multiply
+    background-size cover
+
+    +media-tablet()
+      background url(images/pounce.png) no-repeat top left, radial-gradient(color-indigo, color-indigo-dark)
+      background-size cover
+      background-blend-mode multiply
 
     .quote
       align-self flex-end
@@ -374,6 +393,9 @@
         font-family "Kessel 105"
         font-size 52px
         font-weight bold
+
+        .symbol
+          font-size 26px
 
   .key-feature-details
     display flex
