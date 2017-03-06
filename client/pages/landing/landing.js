@@ -78,7 +78,7 @@ Template.LandingPage.onRendered(function() {
   pageInitialized = true;
 
   // Initialize facebook "Message Us" plugin
-  window.fbAsyncInit();
+  // window.fbAsyncInit();
 });
 
 

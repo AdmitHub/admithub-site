@@ -48,28 +48,42 @@ site-navbar-border-height = 2px
         border-bottom none
 
       &.open-nav
-        // TODO Compute this dynamically instead of hardcoding to the height of 4 nav items
-        bottom -238px
+        // TODO Compute this dynamically instead of hardcoding to the height of x nav items
+        bottom -484px
 
         transition all ease 0.6s
 
-        +media-tablet()
-          bottom -248px
+        +media-desktop()
+          bottom 0
 
       ul
         width 100%
-        margin-bottom 0
+        padding 0
+        margin 0
 
         li
           display block
           width 100%
-          padding 20px 10px
+          padding 20px 0
+          margin-left 0 !important
 
           font-size 12px
           text-align center
 
+          +media-desktop()
+            padding 20px 10px
+
+          a:not(.ah-request-demo-button)
+            width 100%
+            height 100%
+
+            &:hover
+              color color-brand-tertiary !important
+
+            &:active
+              color color-brand-secondary !important
+
     #ah-header-overflow-menu
-      position absolute
       right 10px
 
       display flex
@@ -98,6 +112,9 @@ site-navbar-border-height = 2px
       display flex
       align-items center
       justify-content center
+
+      height 100
+
       background-color white
 
       +media-desktop()
