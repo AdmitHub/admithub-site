@@ -1,0 +1,21 @@
+<template name="PressPage">
+  <div id="ah-press-page">
+    <section id="ah-section-press-clippings">
+      <div class="ah-container-centered">
+        <div class="page-title">Press</div>
+        {{> PressClipping title="College Chatbot Service AdmitHub Raises $2.95M in Seed Funding to Guide Students Through School" previewText="AdmitHub, an edtech startup that’s creating conversational artificial intelligence (AI) to guide students to and through college, is trying to make that happen. (In fact, the conversation above was one that we ha…" link="https://www.edsurge.com/news/2017-01-11-college-chatbot-service-admithub-raises-2-95m-in-seed-funding-to-guide-students-through-college" }}
+        {{> PressClipping title="A Siri for Higher Ed Aims to Boost Student Engagement" previewText="When third-year students in strategy classes at BI Norwegian Business School have a question about their assignments next semester, odds are a robot will provide their answer. A chatbot—a computer program…" link="https://www.edsurge.com/news/2016-12-07-a-siri-for-higher-ed-aims-to-boost-student-engagement" }}
+        {{> PressClipping title="How chatbots will help education" previewText="It’s an exciting time for innovations in ed tech, and chatbots are at the forefront. Mobile apps are still compelling and there are many use cases where an app can provide the richest experience. However…" link="http://venturebeat.com/2016/09/29/how-chatbots-will-help-education/" }}
+        {{> PressClipping title="#TSDemoday: Handicapping the 2015 Techstars Boston Class" previewText="Twelve startups are set to present themselves to the public today at Techstars Demo Day, after 3 months in what I'm calling, for now, Boston's top accelerator program. I'm not an accredited investor, so I'm not…" link="http://bostinno.streetwise.co/2015/09/01/techstars-boston-startups-tsdemoday-2015-breakdown/" }}
+        {{> PressClipping title="AdmitHub Launches AboutAdmissions To Make College Counseling Available To All" previewText="Today, AdmitHub launched AboutAdmissions, a free, Reddit-style Q&A forum for students and parents to post questions and receive answers about the college admissions process. Every year in the U.S., almost…" link="https://techcrunch.com/2014/11/11/admithub-launches-aboutadmissions-to-make-college-counseling-available-to-all/" }}
+      </div>
+    </section>
+  </div>
+</template>
+
+<template name="PressClipping">
+  <div class="ah-press-clipping">
+    <h1 class="title"><a href="{{ link }}">{{ title }}<span><img class="icon" src="images/icons/icon-chevron-right.svg"/></span></a></h1>
+    <p>{{ previewText }}</p>
+  </div>
+</template>
