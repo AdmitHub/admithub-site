@@ -150,7 +150,7 @@ site-navbar-border-height = 2px
     flex-direction column
 
     position fixed
-    top 75px
+    top height-navbar
     left 0
     width 100%
     height 'calc(100vh - %s)' % height-navbar
@@ -230,6 +230,60 @@ site-navbar-border-height = 2px
 
       arrow-triangle-height = 40px
       arrow-border-width = 1px
+
+      &.ah-hero
+        display flex
+        flex-direction column
+        align-items center
+        justify-content flex-end !important
+
+        height "calc(100vh - (%s))" % height-navbar
+        width 100%
+        padding 0 !important
+
+        .hero-title
+          padding 0 16px
+
+          color color-type-light
+          font-family "Kessel 105", Arial, sans-serif
+          font-size 48px
+          font-weight bold
+          text-shadow 0 2px 5px color-background-dark
+
+          +media-desktop()
+            font-size 94px
+
+        .hero-subtitle
+          padding 0 20px
+          color color-type-light
+          font-family "Kessel 105", Arial, sans-serif
+          font-size 24px
+          font-weight lighter
+          text-transform uppercase
+          letter-spacing 1px
+
+          +media-desktop()
+            font-size 36px
+            letter-spacing 5px
+
+        .show-more
+          margin 40px 10px 20px
+          color color-brand-secondary
+
+          +media-desktop()
+            margin 80px 20px 50px
+
+          i
+            width 24px
+            height 14px
+
+            font-size 24px
+
+            +media-tablet()
+              width 36px
+              height 24px
+
+              font-size 36px
 
       &.ah-arrow-bottom
 

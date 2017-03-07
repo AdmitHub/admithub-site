@@ -1,0 +1,53 @@
+<template name="AboutUsPage">
+  <div id="ah-about-us-page">
+    <section class="ah-hero">
+      <div class="hero-title">About Us</div>
+      <div class="hero-subtitle">Who we are and what we do</div>
+      <button class="show-more">
+        <img src="images/icons/icon-chevron-down.svg"/>
+      </button>
+    </section>
+
+    <section id="ah-section-team" class="ah-arrow-bottom ah-arrow-bottom-bg-light ah-arrow-bottom-bordered">
+      <div class="ah-container-centered">
+        <h1>Who we are</h1>
+        <p>We are a team of people who understand the tremendous value of learning and care deeply about the education of future generations.</p>
+        <div id="ah-team-member-profiles">
+          {{> teamMemberProfile name="Andrew Magliozzi" title="Chief Executive Officer" imageUrl="https://s3.amazonaws.com/admithub-assets/team/drew.jpg"}}
+          {{> teamMemberProfile name="Kirk Daulerio" title="Chief Knowledge Officer" imageUrl="https://s3.amazonaws.com/admithub-assets/team/kirk.jpg"}}
+          {{> teamMemberProfile name="Cristina Herndon" title="Director of Partner Relations" imageUrl="https://s3.amazonaws.com/admithub-assets/team/cristina.jpg"}}
+          {{> teamMemberProfile name="Dan Peterson" title="Director of Content" imageUrl="https://s3.amazonaws.com/admithub-assets/team/dan.jpg"}}
+          {{> teamMemberProfile name="Caroline Alexander" title="Swiss Army Knife" imageUrl="https://s3.amazonaws.com/admithub-assets/team/caroline.jpg"}}
+          {{> teamMemberProfile name="Elliott Ribner" title="Chief Hacking Officer" imageUrl="https://s3.amazonaws.com/admithub-assets/team/elliott.jpg"}}
+          {{> teamMemberProfile name="Brian Ruhlmann" title="Director of Sales & Marketing" imageUrl="https://s3.amazonaws.com/admithub-assets/team/brian.jpg" }}
+          {{> teamMemberProfile name="Kahmali Rose" title="Code Magician" imageUrl="https://s3.amazonaws.com/admithub-assets/team/kahmali.jpg" }}
+          {{> teamMemberProfile name="Anthony Reid" title="Master Software Architect" imageUrl="https://s3.amazonaws.com/admithub-assets/team/anthony.jpg"}}
+          {{> teamMemberProfile name="Damien Rochford" title="AI Chatbot Engineer" imageUrl="images/staff/damien.jpg"}}
+          {{> teamMemberProfile name="Kathleen Da Silva" title="Customer Success Strategist" imageUrl="images/staff/kathleen.jpg"}}
+          {{> teamMemberProfile name="Nathasha Rodriguez" title="Business Development Representative" imageUrl="images/staff/nathasha.jpg"}}
+        </div>
+      </div>
+    </section>
+
+    <section id="ah-section-steppingstone">
+      <h1>How We Helped the Steppingstone Foundation</h1>
+      <div class="ah-video-frame">
+        <div class="responsive-video-wrapper vimeo">
+          <iframe src="https://player.vimeo.com/video/167477660?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<template name="teamMemberProfile">
+  <div class="ah-team-member-profile">
+    <div class="ah-team-member-profile-image">
+      <img src="{{ $or imageUrl "/purple-logo.png" }}" alt="{{ name }}" />
+    </div>
+    <div class="ah-team-member-profile-info">
+      <div class="ah-team-member-profile-name">{{ name }}</div>
+      <div class="ah-team-member-profile-title">{{ title }}</div>
+    </div>
+  </div>
+</template>

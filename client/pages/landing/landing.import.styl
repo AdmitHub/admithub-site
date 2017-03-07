@@ -28,16 +28,7 @@
     +media-desktop()
       max-width 800px
 
-  #ah-hero
-    display flex
-    flex-direction column
-    align-items center
-    justify-content flex-end !important
-
-    height "calc(100vh - (%s))" % height-navbar
-    width 100%
-    padding 0 !important
-
+  .ah-hero
     background url(images/hero.png) no-repeat
     background-color rgba(70, 50, 5, .6)
     background-blend-mode multiply
@@ -48,50 +39,6 @@
       background-color rgba(70, 50, 5, .6)
       background-blend-mode multiply
       background-size cover
-
-    .hero-title
-      padding 0 16px
-
-      color color-type-light
-      font-family "Kessel 105", Arial, sans-serif
-      font-size 48px
-      font-weight bold
-      text-shadow 0 2px 5px color-background-dark
-
-      +media-desktop()
-        font-size 94px
-
-    .hero-subtitle
-      padding 0 20px
-      color color-type-light
-      font-family "Kessel 105", Arial, sans-serif
-      font-size 24px
-      font-weight lighter
-      text-transform uppercase
-      letter-spacing 1px
-
-      +media-desktop()
-        font-size 36px
-        letter-spacing 5px
-
-    .show-more
-      margin 40px 10px 20px
-      color color-brand-secondary
-
-      +media-desktop()
-        margin 80px 20px 50px
-
-      i
-        width 24px
-        height 14px
-
-        font-size 24px
-
-        +media-tablet()
-          width 36px
-          height 24px
-
-          font-size 36px
 
   #ah-section-help-students
 
