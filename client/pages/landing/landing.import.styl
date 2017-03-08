@@ -41,15 +41,16 @@
       background-size cover
 
   #ah-section-help-students
-
-    background url(images/network-background.png) no-repeat bottom right
-    background-size cover
+    //background url(images/network-background.png) no-repeat bottom right
+    //background-size cover
 
     +media-tablet()
-      background url(images/network-background.png) no-repeat bottom center
+      background url(images/network-background.png) no-repeat top right
       background-size cover
 
     .ah-row-wrap
+      display flex
+      flex-wrap wrap
       width 100%
 
     .titled-paragraph
@@ -61,7 +62,10 @@
 
       +media-desktop()
         margin 10px 15px
-       max-width 480px
+        max-width 480px
+
+        p
+          line-height 36px
 
   #ah-section-gsu
     background url(images/pounce.jpg) no-repeat top left, radial-gradient(color-indigo, color-indigo-dark)
@@ -106,6 +110,14 @@
           font-size 20px
 
   #ah-section-gsu-case-study
+    //text-align start
+    align-items flex-start
+
+    h1, p
+      text-align start
+      width 100%
+      max-width 1000px !important
+
     .case-study-stats
       display flex
       flex-wrap wrap
@@ -113,6 +125,9 @@
 
   #ah-section-key-benefits
     background-color color-indigo
+
+    h1
+      padding-bottom 0 !important
 
   #ah-section-virtual-assistant
     background url(images/speech-bubble-background.jpg) no-repeat center right
@@ -179,11 +194,7 @@
         text-align center
 
     .ah-request-demo-button
-      margin 20px
-
-      +media-tablet()
-        margin 20px 0
-        //width auto
+      margin 50px 0 !important
 
   #ah-section-recently-answered-questions
     padding-bottom 0 !important
@@ -352,7 +363,7 @@
     padding 30px 10px
 
     +media-desktop()
-      padding 60px 20px
+      padding 40px 20px
 
     &.inverse
       flex-direction row-reverse

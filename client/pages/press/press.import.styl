@@ -27,14 +27,22 @@
     text-align start !important
 
     h1
-      margin 0 !important
       text-align start !important
 
-      a
-        color color-brand-primary-light
+    a
+      color color-brand-primary-light
+
+      &:hover
+        color color-brand-primary !important
+
+      &:active
+        color color-brand-tertiary !important
 
     p
       max-width 100%
+
+      +media-desktop()
+        margin 0 0 3em 0!important
 
     .icon
       margin-left 10px
