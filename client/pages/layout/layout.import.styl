@@ -23,10 +23,10 @@ site-navbar-border-height = 2px
 
     +media-tablet()
       justify-content space-between
-      padding 0 30px
 
     +media-desktop()
       padding 0 40px
+      height height-navbar-desktop
 
     nav
       position absolute
@@ -48,22 +48,34 @@ site-navbar-border-height = 2px
 
       &.open-nav
         // TODO Compute this dynamically instead of hardcoding to the height of x nav items
-        bottom -484px
+        bottom -376px
 
         transition all ease 0.6s
 
         +media-desktop()
           bottom 0
 
+        a:not(.ah-request-demo-button)
+          &:hover
+            border-bottom-color transparent !important
+            color color-brand-primary !important
+
+          &:active
+            border-bottom-color transparent !important
+            color color-brand-primary-light !important
+
       ul
         width 100%
+        max-height "calc(100vh - %s)" % height-navbar
         padding 0
         margin 0
+
+        overflow-y auto
 
         li
           display block
           width 100%
-          padding 20px 0
+          padding 8px 0
           margin-left 0 !important
 
           font-size 12px
@@ -171,6 +183,10 @@ site-navbar-border-height = 2px
     +media-tablet()
       text-align start
 
+    +media-desktop()
+      top height-navbar-desktop
+      height 'calc(100vh - %s)' % height-navbar-desktop
+
     h1, h2, h3, h4, h5
       color color-type-primary
       font-family 'Kessel 105', Arial, sans-serif
@@ -256,6 +272,9 @@ site-navbar-border-height = 2px
         height "calc(100vh - (%s))" % height-navbar
         width 100%
         padding 0 !important
+
+        +media-desktop()
+          height "calc(100vh - (%s))" % height-navbar
 
         .hero-title
           padding 0 16px
