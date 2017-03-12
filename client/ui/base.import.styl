@@ -1,6 +1,15 @@
 html
   height 100vh
 
+  font-family "Lato", Arial, sans-serif
+  font-size 16px
+
+  +media-tablet()
+    font-size 18px
+
+  +media-desktop()
+    font-size 20px
+
 body
   height 100%
   margin 0
@@ -28,18 +37,10 @@ p
   color color-type-primary
   font-family "Lato", Arial, sans-serif
   letter-spacing 1px
-  font-size 16px
   font-weight 300
-  line-height 28px
-
-  +media-tablet()
-    font-size 18px
 
   +media-desktop()
-    max-width 800px
-
-    font-size 20px
-    line-height 36px
+    max-width 1000px
 
 a
   display inline-block
@@ -48,3 +49,16 @@ a
 strong
   font-weight bold
 
+ol
+  font-family "Lato", Arial, sans-serif
+
+  h1
+    margin 40px 0 0 5px !important
+    padding-bottom 0 !important
+
+li
+  h1
+    text-align start !important
+
+  p
+    margin-left 5px
