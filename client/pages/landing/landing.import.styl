@@ -67,7 +67,7 @@
         max-width 480px
 
         p
-          line-height 36px
+          line-height 1.6rem
 
   #ah-section-gsu
     background url(images/pounce.jpg) no-repeat top left, radial-gradient(color-indigo, color-indigo-dark)
@@ -115,7 +115,7 @@
     align-items flex-start
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.50)
 
-    h1, p
+    h1, p, .subtitle
       text-align start
       width 100%
       max-width 1000px !important
@@ -385,17 +385,22 @@
       h3, p
         color color-type-light !important
 
+      p
+        line-height: 1.8rem;
+
     .icon
       display flex
       align-items center
       justify-content center
 
-      width 180px
+      width 80px // Make small on mobile and tablet
       height @width
       margin 0 50px
 
-      +media-tablet()
-        margin 0 100px
+      +media-desktop()
+        width 180px
+        height @width
+        margin 0 50px
 
       img
         width 100%

@@ -2,9 +2,9 @@
   <div id="ah-press-page">
     <section id="ah-section-press-clippings">
       <div class="ah-container-centered">
-        <div class="page-title">Press</div>
+        <h1 class="page-title">In the Press</h1>
         {{> PressClipping title="How one university reduced summer melt 21.4% and increased enrollment 3.9%" previewText="AdmitHub, an edtech startup which builds conversational artificial intelligence (AI) to guide students on the path to and through college, together with Georgia State University, has released the results of a study that examined the…" link="http://www.ecampusnews.com/top-news/gsu-summer-melt-enrollment/" publisher="ECampus News: March, 2017" }}
-        {{> PressClipping title="Artificial Intelligence is Creating a More Human Workforce" previewText="In a recent study published by Lindsay Page and Hunter Gehlbach, an AI chatbot to text with incoming students at Georgia State University was shown to dramatically reduce &#8220;summer melt&#8221; &#8212; a phenomenon where students are accepted to…" link="http://www.huffingtonpost.com/entry/58c0561fe4b0a797c1d3981a" publisher="HuffingtonPost: March, 2017" }}
+        {{> PressClipping title="Artificial Intelligence is Creating a More Human Workforce" previewText="In a recent study published by Lindsay Page and Hunter Gehlbach, an AI chatbot to text with incoming students at Georgia State University was shown to dramatically reduce summer melt, a phenomenon where students are accepted to…" link="http://www.huffingtonpost.com/entry/58c0561fe4b0a797c1d3981a" publisher="HuffingtonPost: March, 2017" }}
         {{> PressClipping title="College Chatbot Service AdmitHub Raises $2.95M in Seed Funding to Guide Students Through School" previewText="AdmitHub, an edtech startup that’s creating conversational artificial intelligence (AI) to guide students to and through college, is trying to make that happen. (In fact, the conversation above was one that we ha…" link="https://www.edsurge.com/news/2017-01-11-college-chatbot-service-admithub-raises-2-95m-in-seed-funding-to-guide-students-through-college" publisher="EdSurge: January, 2017" }}
         {{> PressClipping title="A Siri for Higher Ed Aims to Boost Student Engagement" previewText="When third-year students in strategy classes at BI Norwegian Business School have a question about their assignments next semester, odds are a robot will provide their answer. A chatbot—a computer program…" link="https://www.edsurge.com/news/2016-12-07-a-siri-for-higher-ed-aims-to-boost-student-engagement" publisher="EdSurge: December, 2016" }}
         {{> PressClipping title="How chatbots will help education" previewText="It’s an exciting time for innovations in ed tech, and chatbots are at the forefront. Mobile apps are still compelling and there are many use cases where an app can provide the richest experience. However…" link="http://venturebeat.com/2016/09/29/how-chatbots-will-help-education/" publisher="VentureBeat: September, 2016" }}
@@ -17,9 +17,9 @@
 
 <template name="PressClipping">
   <div class="ah-press-clipping">
-    <h1 class="title">
-      <a href="{{ link }}" target="_blank">{{ title }}<span><img class="icon" src="/images/icons/icon-chevron-right.svg"/></span></a>
-    </h1>
+    <h2 class="title">
+      <a href="{{ link }}" target="_blank">{{ title }}</a>
+    </h2>
     <p class="publisher ah-color-type-hint"><strong>{{ publisher }}</strong></p>
     <p>{{ previewText }}</p>
   </div>

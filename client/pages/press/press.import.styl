@@ -1,23 +1,39 @@
 #ah-press-page
-  h1
+  h2
     text-transform capitalize !important
 
   #ah-section-press-clippings .ah-container-centered
-    max-width 1000px !important
+    max-width 800px !important
 
   .ah-press-clipping
     width 100%
-    margin 30px 0
+    margin 1.2rem 0
     text-align start !important
-
-    h1
+  
+    h2
       text-align start !important
+      margin-bottom .825rem
+    
 
-    a
+    .title a 
+      font-size 1.4rem
+      
       color color-brand-primary-light
+      &:after
+        content ""
+        display inline-block 
+        background url(images/icons/icon-chevron-right.svg) no-repeat bottom right
+        padding-left .5rem
+        width .444rem
+        height 1rem
 
       &:hover
         color color-brand-primary !important
+        &:after
+          content ''
+          background url(images/icons/icon-chevron-right-hover.svg) no-repeat bottom right
+          width .444rem
+          height 1rem
 
       &:active
         color color-brand-tertiary !important
@@ -29,4 +45,8 @@
       margin-left 10px
 
     .publisher
-      margin 0 0 30px
+      margin 0 0 -.5rem
+  
+  .ah-press-clipping:first-of-type
+    margin-top: 0;
+      

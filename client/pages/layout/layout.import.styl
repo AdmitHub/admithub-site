@@ -112,7 +112,7 @@ site-navbar-border-height = 2px
       width 64px
       background-color white
 
-      font-size 30px
+      font-size 30px            // What is?
 
       cursor pointer
 
@@ -156,15 +156,17 @@ site-navbar-border-height = 2px
       .ah-header-nav-item
         margin 0 10px
 
-        letter-spacing 0.5px
+        letter-spacing .05rem
 
         a:not(.ah-request-demo-button)
-          line-height 55px
-          //width 100%
+          line-height 3.4rem
 
           color color-type-primary
           font-family "Lato", Arial, sans-serif
-          font-size 20px
+          font-size 1.1rem
+
+          +media-tablet()
+            font-size .9rem
 
   #ah-site-content
     display flex
@@ -198,39 +200,26 @@ site-navbar-border-height = 2px
     h1
       margin 0
       padding-bottom 20px
-      font-size 30px
       font-weight bold
-      letter-spacing 1px
+      letter-spacing .05rem
       text-align center
       text-transform uppercase
 
       color color-brand-primary-light
 
       +media-tablet()
-        font-size 36px
-
-    h2
-      margin-bottom 15px
-
-      color color-type-secondary
-      font-size 24px
-      font-weight lighter
-      text-align center
-
-      +media-tablet()
-        text-align start
-        font-size 30px
+        font-size 1.88rem
 
     h3, h4
       font-family "Lato"
-      font-size 18px
+      font-size 1.25rem
       text-transform uppercase
 
       +media-tablet()
-        font-size 20px
+        font-size 1.3rem
 
       +media-desktop()
-        font-size 24px
+        font-size 1.3rem
 
     h4
       color color-type-disabled
@@ -247,6 +236,11 @@ site-navbar-border-height = 2px
 
         &:active
           color color-brand-secondary !important
+
+    .subtitle
+      font-size 1.25rem
+      margin -.3rem 0 3rem
+
 
     section
       display flex
@@ -281,7 +275,7 @@ site-navbar-border-height = 2px
 
           color color-type-light
           font-family "Kessel 105", Arial, sans-serif
-          font-size 48px
+          font-size 3rem // Was 48px
           font-weight bold
           text-shadow 0 2px 5px color-background-dark
 
@@ -292,22 +286,25 @@ site-navbar-border-height = 2px
           padding 0 20px
           color color-type-light
           font-family "Kessel 105", Arial, sans-serif
-          font-size 24px
+          font-size 1.9rem
           font-weight lighter
           text-transform uppercase
           letter-spacing 1px
 
           +media-desktop()
-            font-size 36px
+            font-size 1.9rem // Was 36px
             letter-spacing 5px
 
         p
-          margin-top 20px
+          margin 1.5rem 1rem 0
+          font-size 1.5rem
+          line-height 1.8rem
 
           color color-type-light !important
 
           +media-desktop()
-            font-size 24px
+            margin-top 1.5rem
+            font-size 1.25rem
 
         .show-more
           margin 40px 10px 20px
@@ -394,20 +391,20 @@ site-navbar-border-height = 2px
     .page-title
       width 100%
       max-width 1200px
-      padding-bottom 20px
+      padding-bottom 15px
       margin-bottom 30px
       border-bottom 1px solid color-brand-primary
 
       color color-brand-primary
       font-family "Lato", Arial, sans-serif
-      font-size 24px
+      font-size 1.5rem
       text-align start
 
       +media-tablet()
-        font-size 36px
+        font-size 1.4rem
 
       +media-desktop()
-        font-size 48px
+        font-size 1.4rem
 
     .ah-chat-log
       display flex
