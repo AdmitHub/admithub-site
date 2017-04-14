@@ -1,3 +1,5 @@
+import {chatBot} from "../../js/chat-bot.js";
+
 FlowRouter.route('/', {
   name: 'Home',
 
@@ -178,6 +180,9 @@ Template.LandingPage.helpers({
 });
 
 Template.LandingPage.events({
+  'click .choice': function() {
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+  },
   'click .get-started-btn': function(e, t) {
     var phoneNumber = $('.get-started-phone-number').val();
     t.sendingText.set(true);
@@ -415,4 +420,8 @@ Template.landingQuestions.helpers({
     });
     return $html.html();
   }
+});
+
+Template.ChatBot.onRendered(function() {
+  chatBot();
 });

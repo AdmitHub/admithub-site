@@ -133,6 +133,9 @@
         <!--</form>-->
       <!--</div>-->
     </section>
+    <section>
+      {{> ChatBot }}
+    </section>
 
     <!--<section id="ah-section-fb-message-us">-->
       <!--<div class="ah-container-centered">-->
@@ -212,4 +215,49 @@
       </li>
     {{/each}}
   </ul>
+</template>
+
+<template name='ChatBot'>
+  <div class="container">
+    <article class="chat" role="log" aria-live="polite" aria-atomic="false">
+      <noscript>
+        <section class="message bot show"><p>I'm sorry, but you need JavaScript turned on for this chat bot to function.</p></section>
+      </noscript>
+    </article>
+    <div class="content" role="document" aria-hidden="true" aria-label="Information">
+      <button class="close" aria-label="Close">&times;</button>
+      <article id="projects-p1">
+        <h3>Project 1</h3>
+        <p>Project 1 info goes here...</p>
+      </article>
+      <article id="projects-p2">
+        <h3>Project 2</h3>
+        <p>Project 2 info goes here...</p>
+      </article>
+      <article id="projects-p3">
+        <h3>Project 3</h3>
+        <p>Project 3 info goes here...</p>
+      </article>
+      <article id="writing-articles">
+        <h3>Articles</h3>
+        <p>Articles go here...</p>
+      </article>
+      <article id="writing-theses">
+        <h3>Theses</h3>
+        <p>Theses goes here...</p>
+      </article>
+      <article id="contact-socialmedia">
+        <h3>Social media</h3>
+        <p>Social media links go here...</p>
+      </article>
+      <article id="contact-email">
+        <h3>Email</h3>
+        <p>Email goes here...</p>
+      </article>
+      <article id="contact-address">
+        <h3>Address</h3>
+        <p>Address info goes here.</p>
+      </article>
+    </div>
+  </div>
 </template>
