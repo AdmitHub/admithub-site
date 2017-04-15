@@ -1,9 +1,12 @@
+.ah-chatbot
+  background #222628
+
 #ah-site-layout #ah-site-content
   .container
     width 768px
     max-width 100%
     margin 0 auto
-    height 100%
+    height 300px
     position static
     overflow hidden
     top 0
@@ -21,7 +24,6 @@
 
 .chat, .content
   position relative
-  // width 100%
   max-width 100%
   top 0
   left 0
@@ -34,7 +36,7 @@
 
 .chat
   height 100%
-  padding 1em
+  padding 0 1em
 
 
 .content
@@ -92,6 +94,13 @@
   -webkit-transition transform 0.3s ease
   transition transform 0.3s ease
   display table
+
+  input[type='text']
+    font-size 16px
+    border none
+    border-radius 6px
+    width 200px
+    padding .5em .5em
 
 .message.user
   max-width 100%

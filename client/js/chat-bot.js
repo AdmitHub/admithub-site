@@ -135,7 +135,7 @@ export function chatBot() {
     }, idletime);
     newMessage(welcomeReplies, 'bot');
     setTimeout(() => {
-      newMessage(`<input id="firstName" placeholder="First Name" /> <button data-step="2" class="choice input startStep">Submit</button>`);
+      newMessage(`<input type="text" id="firstName" placeholder="First Name" /> <button data-step="2" class="choice input startStep">Submit</button>`);
     }, 300);
   };
 
@@ -170,7 +170,7 @@ export function chatBot() {
           menu += `<button class="choice menu" data-step="${num}" data-submenu="${index}">${val.title}</button>`;
         }
         else if (val.inputStep && val.startStep) {
-          menu += `<input id="collegeName" placeholder="College Name" /> <button data-step="${nextStep}" class="choice input startStep">Submit</button>`;
+          menu += `<input type="text" id="collegeName" placeholder="College Name" /> <button data-step="${nextStep}" class="choice input startStep">Submit</button>`;
         }
         else {
           menu += `<button class="choice startStep" data-step="${nextStep}">${val.title}</button>`;
