@@ -5,6 +5,11 @@ export function chatBot() {
       step2 = {
         'menu': [
           {
+            'title': 'Educator',
+            'startStep': true,
+            'stepnum': '3',
+          },
+          {
             'title': 'Student or Parent',
             'submenu': [
               {
@@ -13,11 +18,6 @@ export function chatBot() {
                 'href': 'https://www.messenger.com/t/admithub/',
               },
             ],
-          },
-          {
-            'title': 'Educator',
-            'startStep': true,
-            'stepnum': '3',
           },
           {
             'title': 'None of these',
