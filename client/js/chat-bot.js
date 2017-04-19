@@ -128,7 +128,7 @@ export function chatBot() {
 
   const init = () => {
     let welcomeReplies = [
-      'Hey there, I’m Oli, AdmitHub’s trusty virtual assistant.  What’s your first name?'
+      'Hi! I’m Oli, a virtual assistant to teach you about AdmitHub. What do your friends call you?'
     ];
     idle = window.setInterval(() => {
       window.clearInterval(idle);
@@ -276,7 +276,7 @@ export function chatBot() {
         const stepNum = e.target.getAttribute('data-step');
 
         if (stepNum === '2') {
-          newMessage(`Nice to meet you ${data["firstName"]}`, 'bot');
+          newMessage(`Nice to meet you, ${data["firstName"]}.`, 'bot');
           showMenu(stepNum);
         }
 
