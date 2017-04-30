@@ -1,4 +1,5 @@
-import {chatBot} from "../../js/chat-bot.js";
+import {chatBot, data} from "../../js/chat-bot.js";
+import { Email } from 'meteor/email';
 
 FlowRouter.route('/', {
   name: 'Home',
@@ -180,8 +181,14 @@ Template.LandingPage.helpers({
 });
 
 Template.LandingPage.events({
-  'click .choice': function() {
-    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+  'click .end': function() {
+    console.log(data);
+//     Email.send({
+//       to: "jasonmperetz@gmail.com",
+//       from: "from.address@email.com",
+//       subject: "Example Email",
+//       text: "The contents of our email in plain text.",
+// });
   },
   'click .get-started-btn': function(e, t) {
     var phoneNumber = $('.get-started-phone-number').val();

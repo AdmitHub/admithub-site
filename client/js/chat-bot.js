@@ -1,8 +1,10 @@
+//import { Email } from 'meteor/email';
+
 export function chatBot() {
   'use strict';
 
-  let data = {},
-      step2 = {
+  export let data = {};
+  let step2 = {
         'menu': [
           {
             'title': 'High School',
@@ -15,7 +17,7 @@ export function chatBot() {
             'stepnum': '3',
           },
           {
-            'title': 'I\'m A Student',
+            'title': 'I\'m still a student',
             'submenu': [
               {
                 'message': 'No worries.  We can always chat on Facebook. Just click the button below... ',
@@ -34,23 +36,10 @@ export function chatBot() {
       step3 = {
         'menu': [
           {
-            'title': 'Admission Officer',
+            'inputStep': true,
             'startStep': true,
-            'stepnum': '4',
-          },
-          {
-            'title': 'Dean or VP',
-            'startStep': true,
-            'stepnum': '4',
-          },
-          {
-            'title': 'Student Success',
-            'startStep': true,
-            'stepnum': '4',
-          },
-          {
-            'title': 'Something else',
-            'startStep': true,
+            'id': 'collegeName',
+            'placeholder': 'College Name',
             'stepnum': '4',
           },
         ],
@@ -60,20 +49,9 @@ export function chatBot() {
           {
             'inputStep': true,
             'startStep': true,
-            'id': 'collegeName',
-            'placeholder': 'College Name',
-            'stepnum': '5',
-          },
-        ],
-      },
-      step5 = {
-        'menu': [
-          {
-            'inputStep': true,
-            'startStep': true,
             'id': 'email',
             'placeholder': 'Email Address',
-            'stepnum': '6',
+            'stepnum': 'end',
           },
         ],
       },
@@ -97,12 +75,7 @@ export function chatBot() {
           },
           {
             'title': 'No thanks.',
-            'end': true,
-            'submenu': [
-              {
-                'message': 'Okay.  Feel free to come back if you change your mind.',
-              },
-            ],
+            'conclusionnum': 'end2',
           },
         ],
       },
@@ -112,12 +85,10 @@ export function chatBot() {
             'inputStep': true,
             'id': 'email',
             'placeholder': 'Email Address',
-            'end': true,
+            'conclusionnum': 'end3',
           },
         ],
-      },
-    idle,
-    idletime = 45000;
+      };
   const chat = document.querySelector('.chat');
   const content = document.querySelector('.content');
 
@@ -156,18 +127,11 @@ export function chatBot() {
     }
   };
 
-  // const randomReply = replies => replies[Math.floor(Math.random() * replies.length)];
-
   const init = () => {
-    let welcomeReplies = [
-      'Hi! I’m Oli, a virtual assistant to teach you about AdmitHub. What do your friends call you?'
-    ];
-    idle = window.setInterval(() => {
-      window.clearInterval(idle);
-    }, idletime);
+    let welcomeReplies = 'Hey there, I’m Oli, AdmitHub’s trusty virtual assistant.  What’s your first name?';
     newMessage(welcomeReplies, 'bot');
     setTimeout(() => {
-      newMessage(`<input type="text" id="firstName" placeholder="First Name" /> <button data-step="2" class="choice input startStep">Submit</button>`);
+      newMessage(`<input type="text" id="firstName" placeholder="First Name" class="inputbox" /> <button data-step="2" class="choice input startStep">Submit</button>`);
     }, 300);
   };
 
@@ -183,15 +147,20 @@ export function chatBot() {
 
   const showMenu = num => {
     let menu = '',
-      nextStep = parseInt(num) + 1,
+      nextStep = '',
       step = eval(`step${num}`),
       goBack = chat.querySelector('button.newmenu'),
       replies = [
-        'And what best describes where you work?',
-        'Which of these best describes your role?',
-        'What institution do you work for?',
-        'Finally, what’s your email address?',
+        'By the way, what best describes where you work?',
+        'That reminds me, what college or university do you work for?',
+        'So they can follow up, just tell me your email address',
       ];
+
+      if (num.match(/^[0-9]+$/)) {
+        nextStep = parseInt(num) + 1;
+      } else {
+        nextStep = 'blah';
+      }
     if (goBack) {
       makeUserBubble(goBack);
     }
@@ -202,8 +171,11 @@ export function chatBot() {
           menu += `<button class="choice menu" data-step="${num}" data-submenu="${index}">${val.title}</button>`;
         }
         else if (val.inputStep && val.startStep) {
-          menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" /> <button data-step="${nextStep}" class="choice input startStep">Submit</button>`;
-        }
+          if (val.stepnum === 'end') {
+            menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" class="inputbox" /> <button data-step="end" class="choice input end startStep">Submit</button>`;
+          } else {
+            menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" class="inputbox" /> <button data-step="${nextStep}" class="choice input startStep">Submit</button>`;
+          }        }
         else if (val.startConclusion) {
           menu += `<button class="choice startConclusion" data-conclusion="${val.conclusionnum}">${val.title}</button>`;
         }
@@ -215,9 +187,6 @@ export function chatBot() {
         newMessage(menu);
       }, 300);
     }, 500);
-    idle = window.setInterval(() => {
-      window.clearInterval(idle);
-    }, idletime);
   };
 
   const showConclusion = num => {
@@ -230,23 +199,25 @@ export function chatBot() {
     }
     setTimeout(() => {
       conclusion.menu.forEach((val, index) => {
-        if (val.submenu) {
-          menu += `<button class="choice menu" data-conclusion="${num}" data-submenu="${index}">${val.title}</button>`;
-        }
-        else if (val.inputStep) {
-          menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" /> <button data-conclusion="${nextConclusion}" class="choice startConclusion input">Submit</button>`;
+        if (val.inputStep) {
+          if (val.conclusionnum === 'end3') {
+            menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" class="inputbox" /> <button data-conclusion="end3" class="choice startConclusion end input">Submit</button>`;
+          } else {
+            menu += `<input type="text" id="${val.id}" placeholder="${val.placeholder}" class="inputbox" /> <button data-conclusion="${nextConclusion}" class="choice startConclusion input">Submit</button>`;
+          }
         }
         else {
-          menu += `<button class="choice startConclusion" data-conclusion="${nextConclusion}">${val.title}</button>`;
+          if (val.conclusionnum === 'end2') {
+            menu += `<button class="choice startConclusion end" data-conclusion="end2">${val.title}</button>`;
+          } else {
+            menu += `<button class="choice startConclusion" data-conclusion="${nextConclusion}">${val.title}</button>`;
+          }
         }
       });
       setTimeout(() => {
         newMessage(menu);
       }, 300);
     }, 500);
-    idle = window.setInterval(() => {
-      window.clearInterval(idle);
-    }, idletime);
   };
 
   const stepMenuClick = (clicked, num) => {
@@ -270,33 +241,33 @@ export function chatBot() {
     }, 500);
   };
 
-  const toggleContent = article => {
-    let buttons = chat.querySelectorAll('button');
-    if (article) {
-      article.classList.add('show');
-      chat.setAttribute('aria-hidden', 'true');
-      content.setAttribute('aria-hidden', 'false');
-      content.tabIndex = '0';
-      content.focus();
-    } else {
-      content.setAttribute('aria-hidden', 'true');
-      content.tabIndex = '-1';
-      chat.setAttribute('aria-hidden', 'false');
-      if (history.state && history.state.id === 'content') {
-        history.back();
-      }
-      setTimeout(() => {
-        let active = document.querySelector('.content article.show');
-        if (active) {
-          active.classList.remove('show');
-          chat.querySelector(`button[data-content="${active.id}"]`).focus();
-        }
-      }, 300);
-    }
-    for (let i = 0; i < buttons.length; i += 1) {
-      buttons[i].tabIndex = article ? '-1' : '0';
-    }
-  };
+  // const toggleContent = article => {
+  //   let buttons = chat.querySelectorAll('button');
+  //   if (article) {
+  //     article.classList.add('show');
+  //     chat.setAttribute('aria-hidden', 'true');
+  //     content.setAttribute('aria-hidden', 'false');
+  //     content.tabIndex = '0';
+  //     content.focus();
+  //   } else {
+  //     content.setAttribute('aria-hidden', 'true');
+  //     content.tabIndex = '-1';
+  //     chat.setAttribute('aria-hidden', 'false');
+  //     if (history.state && history.state.id === 'content') {
+  //       history.back();
+  //     }
+  //     setTimeout(() => {
+  //       let active = document.querySelector('.content article.show');
+  //       if (active) {
+  //         active.classList.remove('show');
+  //         chat.querySelector(`button[data-content="${active.id}"]`).focus();
+  //       }
+  //     }, 300);
+  //   }
+  //   for (let i = 0; i < buttons.length; i += 1) {
+  //     buttons[i].tabIndex = article ? '-1' : '0';
+  //   }
+  // };
 
   /** Show extra info **/
   // const subMenuClick = clicked => {
@@ -308,9 +279,16 @@ export function chatBot() {
   //   }
   // };
 
+  document.addEventListener('keypress', function(e){
+    if(e.target.classList.contains('inputbox')) {
+      if(e.keyCode === 13){
+        document.querySelector('.input').click();
+      }
+    }
+  });
+
   document.addEventListener('click', e => {
     if (e.target.classList.contains('choice')) {
-      window.clearInterval(idle);
       if (!e.target.classList.contains('submenu')) {
         if (e.target.classList.contains('input')) {
           const parentHTML = e.target.parentNode.innerHTML;
@@ -356,7 +334,7 @@ export function chatBot() {
             setTimeout(() => {
               newMessage(`Nice to meet you ${data["firstName"]}`, 'bot');
               setTimeout(() => {
-                newMessage('[one sentence about what we do…]', 'bot');
+                newMessage('I think a conversation is way more personal than filling out a web form. Hopefully you agree', 'bot');
                 setTimeout(() => {
                   showMenu(stepNum);
                 }, 300);
@@ -365,32 +343,30 @@ export function chatBot() {
             break;
 
           case '3':
-            setTimeout(() => {
-              newMessage('Okay great!', 'bot');
-              setTimeout(() => {
-                newMessage('[describe the problems we solve]', 'bot');
-                setTimeout(() => {
-                  showMenu(stepNum);
-                }, 300);
-              }, 300);
-            }, 500);
-
+            newMessage('Okay great! Like you, our job is to connect with students and help them succeed on the path to and through college.', 'bot');
+            showMenu(stepNum);
             break;
 
           case '4':
-            newMessage('[benefit we bring]', 'bot');
-            showMenu(stepNum);
+          setTimeout(() => {
+            newMessage('In fact, there’s ample research showing text message automation can significantly improve college enrollment outcomes.', 'bot');
+              setTimeout(() => {
+                newMessage(`Hey ${data["firstName"]}, our co-founders, Kirk and Drew, would love to talk to you about how text message automation can help ${data["collegeName"]} achieve its enrollment goals.`, 'bot');
+                setTimeout(() => {
+                  showMenu(stepNum);
+                }, 300);
+              }, 500);
+            }, 500);
             break;
 
-          case '5':
-            newMessage(`Does ${data["collegeName"]}....`, 'bot');
-            showMenu(stepNum);
-            break;
-
-          case '6':
-            newMessage('Thanks, you rock!', 'bot');
-            break;
-
+          case 'end':
+            setTimeout(() => {
+              newMessage('Thanks, you rock!  We’ll be in touch soon.', 'bot');
+                setTimeout(() => {
+                  newMessage('<img src="/images/tinafay.gif" alt="High Five" />', 'bot');
+                }, 500);
+              }, 500);
+          break;
           }
         }
       }
@@ -413,14 +389,18 @@ export function chatBot() {
             newMessage('What’s your email address?', 'bot');
             showConclusion(conclusionNum);
             break;
+
+            case 'end2':
+              newMessage('Okay.  Feel free to come back if you change your mind.', 'bot');
+              break;
+
+            case 'end3':
+              newMessage('Thanks!  We’ll be in touch.', 'bot');
+              break;
         }
       }
     }
   );
-
-  window.addEventListener('popstate', () => {
-    toggleContent();
-  });
 
   setTimeout(() => {
     init();
