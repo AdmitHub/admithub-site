@@ -13,7 +13,7 @@
     <section id="ah-section-help-students" class="ah-border-top-brand-primary">
       <div class="ah-container-centered">
         <h1>What we do</h1>
-        <p>AdmitHub is an artificially intelligent text messaging platform designed to support students on their personal path to college.</p>
+        <h5>AdmitHub is an AI-enabled text messaging platform designed to support students on their personal path to college.</h5>
       </div>
       <br>
       <div class="ah-container-centered">
@@ -40,6 +40,27 @@
           </div>
         </div>
         {{> RequestDemoButton trackingId="section-help-students"}}
+      </div>
+    </section>
+
+    <section id="ah-section-virtual-assistant" class="ah-arrow-bottom ah-arrow-bottom-transparent">
+      <div class="ah-container-centered">
+        <h1 class="ah-color-light">A virtual assistant for your college</h1>
+        <p class="ah-color-light subtitle">Connect with students and supercharge your staff.</p>
+      </div>
+      <div class="ah-chat-log">
+        {{> ChatLogItem sender="user" text="Why mobile messaging?" }}
+        {{> ChatLogItem sender="oli" text="Nearly all text messages are read within minutes. AdmitHub delivers the right information at the right time to improve student outcomes." }}
+        {{> ChatLogItem sender="user" text="How does smart mobile messaging improve student outcomes?" }}
+        {{> ChatLogItem sender="oli" text="AdmitHub engages students one-on-one with nudges, guided conversations, and on-demand answers to support them on every step of their journey to and through college." }}
+      </div>
+    </section>
+
+    <section id="ah-section-partners">
+      <div class="ah-container-centered">
+        <h1>Our Partners</h1>
+        <p class="subtitle">Building strong student relationships with smart mobile messaging.</p>
+        {{> Carousel}}
       </div>
     </section>
 
@@ -70,27 +91,6 @@
           </div>
         </div>
         <a class="ah-request-demo-button" href="http://blog.admithub.com/case-study-how-admithub-is-freezing-summer-melt-at-georgia-state-university">View GSU Case Study</a>
-      </div>
-    </section>
-
-    <section id="ah-section-partners">
-      <div class="ah-container-centered">
-        <h1>Our Partners</h1>
-        <p class="subtitle">Building strong student relationships with smart mobile messaging.</p>
-        {{> Carousel}}
-      </div>
-    </section>
-
-    <section id="ah-section-virtual-assistant" class="ah-arrow-bottom ah-arrow-bottom-transparent">
-      <div class="ah-container-centered">
-        <h1 class="ah-color-light">A virtual assistant for your college</h1>
-        <p class="ah-color-light subtitle">Connect with students and supercharge your staff.</p>
-      </div>
-      <div class="ah-chat-log">
-        {{> ChatLogItem sender="user" text="Why mobile messaging?" }}
-        {{> ChatLogItem sender="oli" text="Nearly all text messages are read within minutes. AdmitHub delivers the right information at the right time to improve student outcomes." }}
-        {{> ChatLogItem sender="user" text="How does smart mobile messaging improve student outcomes?" }}
-        {{> ChatLogItem sender="oli" text="AdmitHub engages students one-on-one with nudges, guided conversations, and on-demand answers to support them on every step of their journey to and through college." }}
       </div>
     </section>
 
