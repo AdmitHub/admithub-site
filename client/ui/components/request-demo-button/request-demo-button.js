@@ -4,7 +4,7 @@ Template.RequestDemoButton.helpers({
       // Don't link to external contact form when button is used to submit a form directly
       return null;
     } else {
-      return 'http://info.admithub.com/text-message-demonstration-for-education'
+      return '#chatbot'
     }
   }
 });

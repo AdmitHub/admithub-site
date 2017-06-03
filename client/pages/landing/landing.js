@@ -1,3 +1,6 @@
+import {chatBot, data} from "../../js/chat-bot.js";
+import { Email } from 'meteor/email';
+
 FlowRouter.route('/', {
   name: 'Home',
 
@@ -178,6 +181,9 @@ Template.LandingPage.helpers({
 });
 
 Template.LandingPage.events({
+  'click .end': function() {
+  
+  },
   'click .get-started-btn': function(e, t) {
     var phoneNumber = $('.get-started-phone-number').val();
     t.sendingText.set(true);
@@ -415,4 +421,8 @@ Template.landingQuestions.helpers({
     });
     return $html.html();
   }
+});
+
+Template.ChatBot.onRendered(function() {
+  chatBot();
 });

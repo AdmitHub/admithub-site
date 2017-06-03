@@ -1,0 +1,190 @@
+#ah-site-layout #ah-site-content
+  .container
+    width 768px
+    max-width 100%
+    margin 0 auto
+    height 500px
+    position static
+    overflow hidden
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+    section
+      text-align left
+      padding 20px
+
+.chat, .content
+  position relative
+  max-width 100%
+  top 0
+  left 0
+  right 0
+  bottom 0
+  overflow-x hidden
+  overflow-y auto
+  -webkit-overflow-scrolling touch
+
+
+.chat
+  height 100%
+  padding 0 1em
+
+
+.content
+  background-color #066
+  color #fff
+  -webkit-transition transform 0.35s ease
+  transition transform 0.35s ease
+  -webkit-transform translateX(-102%)
+  transform translateX(-102%)
+  margin 0
+  outline 0
+
+.content article
+  padding 1em
+  display none
+  overflow-y auto
+
+.content article h3
+  margin-top 2em
+
+.content article.show
+  display block
+
+.content .close
+  position absolute
+  top 0
+  right 0
+  font-size 2.5em
+  margin-right 0.5em
+  cursor pointer
+  z-index 101
+  background-color transparent
+  border none
+  color #fff
+  padding 0
+
+.content[aria-hidden="true"] button, .content[aria-hidden="true"] a
+  display none
+
+.content[aria-hidden="false"]
+  -webkit-transform translateX(0%)
+  transform translateX(0%)
+
+@media (min-width: 769px)
+  .content article
+    padding 1em 2em
+
+.message
+  margin 0.8em 0
+  padding 0.2em 0
+  max-width 80%
+  width auto
+  border-radius 8px
+  position relative
+  -webkit-transition transform 0.3s ease
+  transition transform 0.3s ease
+  display table
+
+  input[type='text']
+    font-size 16px
+    border none
+    border-bottom 3px solid #f5f5f5
+    width 200px
+    padding 0.5em 0 0
+    vertical-align bottom
+    height 36px
+    outline none
+    transition border .2s ease
+
+    &:focus
+      border-bottom 3px solid #c3539f
+
+#ah-site-layout #ah-site-content .container
+  section.message
+    display table
+
+    +.active
+      display flex
+
+.message.user
+  max-width 100%
+  margin 0 auto
+
+.message.user.selected
+  max-width 80%
+  background-color #F5F5F5
+  color #3A5475
+  margin 0.8em 0 0.8em auto
+
+.message.bot p
+  margin 0.5em 1em
+
+.message.bot p
+  color #fff
+
+.message.user p
+  color #3A5475
+  margin 0.25em 0 0 0
+  text-align right
+
+.message.user.selected p
+  margin 0.5em 1em
+  text-align left
+
+.message.bot
+  background-color #7B2865
+  color #fff
+  -webkit-transform translateX(-120%)
+  transform translateX(-120%)
+
+.message.bot.show
+  -webkit-transform translateX(0%)
+  transform translateX(0%)
+
+.message.user button
+  height 55px !important
+  padding 0 40px
+  margin 0 10px
+  border 3px solid
+  color #c3539f
+  border-color #c3539f
+  font-family 'Kessel 105 Bold', Arial, sans-serif !important
+  font-size 1rem
+  letter-spacing 1px
+  line-height 20px
+  text-align center
+  text-transform uppercase
+  //white-space nowrap
+  cursor pointer
+  transition all ease 0.5s
+
+  @media (max-width: 768px)
+    display block
+    width 100%
+
+    &.input
+      margin 10px 0
+
+    & + button
+      margin 0
+
+  & + button
+    margin 10px
+
+  &:hover
+    box-shadow 0 0 5px 1px #222628
+    transition all ease 0.5s
+
+.message.user button.show
+  -webkit-transform translateX(0px)
+  transform translateX(0px)
+
+.message.user button.selected
+  background-color #b0ca3b
+
+.message.user button.newmenu
+  background-color transparent
+  border 1px solid #e1e1e1
