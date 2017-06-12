@@ -384,7 +384,7 @@ export function chatBot() {
             setTimeout(() => {
               newMessage('Thanks, you rock!  We’ll be in touch soon.', 'bot');
                 setTimeout(() => {
-                  newMessage('<img src="/images/tinafay.gif" alt="High Five" />', 'bot');
+                  newMessage('<img src="/images/tinafey66.gif" alt="High Five" />', 'bot');
                 }, 500);
               }, 500);
           break;
