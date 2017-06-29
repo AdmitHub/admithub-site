@@ -15,6 +15,37 @@ FlowRouter.route('/', {
   }
 });
 
+FlowRouter.route('/press', {
+  name: 'Press',
+
+  meta: {
+    pageTitle: 'Press'
+  },
+
+  action: function() {
+    BlazeLayout.render('Layout', {
+      pageContent: 'PressPage',
+    });
+  }
+});
+
+FlowRouter.route('/:scrollTo', {
+  name: 'Home_scroll',
+  meta: {
+    pageTitle: 'Home'
+  },
+  action: function(params, queryParams) {
+    BlazeLayout.render('Layout', {
+      main: "Home",
+      pageContent: 'LandingPage'
+    });
+    setTimeout(() => {
+      $("#ah-site-content").animate({scrollTop: $("div.chatbot").offset().top - 120}, 400)
+    }, 2000)
+  }
+});
+
+
 Template.LandingPage.onCreated(function() {
   this.textSent = new ReactiveVar(false);
   this.sendingText = new ReactiveVar(false);

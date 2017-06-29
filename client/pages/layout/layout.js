@@ -10,7 +10,6 @@ Template.Layout.onCreated(function() {
   });
 });
 
-
 Template.Layout.helpers({
   isOfficer: function() {
     return CollegeOfficers.findOne({officers: Meteor.userId()});
