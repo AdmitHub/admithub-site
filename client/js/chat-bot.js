@@ -50,6 +50,28 @@ export function chatBot() {
             'startStep': true,
             'id': 'email',
             'placeholder': 'Email Address',
+            'stepnum': '4',
+          },
+        ],
+      },
+      step5 = {
+        'menu': [
+          {
+            'inputStep': true,
+            'startStep': true,
+            'id': 'topChallenge',
+            'placeholder': 'Top Challenge',
+            'stepnum': '5',
+          },
+        ],
+      },
+      step6 = {
+        'menu': [
+          {
+            'inputStep': true,
+            'startStep': true,
+            'id': 'topPriority',
+            'placeholder': 'Top Priority',
             'stepnum': 'end',
           },
         ],
@@ -152,7 +174,9 @@ export function chatBot() {
       replies = [
         'By the way, what best describes where you work?',
         'That reminds me, what college or university do you work for?',
-        'So they can follow up, just tell me your email address',
+        'So they can follow up, could you please tell me your email address.',
+        'Out of curiosity, what\'s the biggest challenge you are facing today?',
+        'Last but not least, what\'s your top priority this enrollment cycle?'
       ];
 
       if (num.match(/^[0-9]+$/)) {
@@ -183,8 +207,12 @@ export function chatBot() {
         }
       });
       setTimeout(() => {
+        console.log(menu)
         newMessage(menu);
       }, 300);
+      setTimeout(() => { 
+        $('.inputbox').focus() 
+      }, 600);
     }, 500);
   };
 
@@ -314,7 +342,27 @@ export function chatBot() {
           }
           else {
             data[inputId] = input.value;
-            if (data && data.collegeName && data.email) {
+            if (data.topPriority) {
+                Meteor.call(
+                  'sendEmail',
+                  'Sales <sales@admithub.com>',
+                  'bot@admithub.com',
+                  '2016543@bcc.hubspot.com',
+                  'A new lead from this college or university: ' + data.collegeName,
+                  'Here is a even more info' + 
+                  '  Top Priority: ' + data.topPriority
+                );
+            } else if (data.topChallenge) {
+                Meteor.call(
+                  'sendEmail',
+                  'Sales <sales@admithub.com>',
+                  'bot@admithub.com',
+                  '2016543@bcc.hubspot.com',
+                  'A new lead from this college or university: ' + data.collegeName,
+                  'Here is a bit more info' + 
+                  '  Top Challenge: ' + data.topChallenge
+                );
+            } else if (data && data.collegeName && data.email) {
                 Meteor.call(
                   'sendEmail',
                   'Sales <sales@admithub.com>',
@@ -370,14 +418,27 @@ export function chatBot() {
 
           case '4':
           setTimeout(() => {
-            newMessage('In fact, there’s ample research showing text message automation can significantly improve college enrollment outcomes.', 'bot');
+            newMessage('There’s ample research showing text message automation can significantly improve college enrollment and retention.', 'bot');
               setTimeout(() => {
-                newMessage(`Hey ${data["firstName"]}, our co-founders, Kirk and Drew, would love to talk to you about how text message automation can help ${data["collegeName"]} achieve its enrollment goals.`, 'bot');
+                newMessage(`If you have a few minutes, our co-founders, Kirk and Drew, would love to learn more about ${data["collegeName"]} and your enrollment goals.`, 'bot');
                 setTimeout(() => {
                   showMenu(stepNum);
                 }, 300);
               }, 500);
             }, 500);
+            break;
+
+          case '5':
+          setTimeout(() => {
+            newMessage('We help several colleges and universities overcome their enrollment and retention challenges.', 'bot')
+              setTimeout(() => {
+                showMenu(stepNum);
+              }, 300);
+            }, 500);
+            break;
+
+          case '6':
+            showMenu(stepNum);
             break;
 
           case 'end':
