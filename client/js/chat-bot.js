@@ -149,7 +149,7 @@ export function chatBot() {
   };
 
   const init = () => {
-    let welcomeReplies = 'Hey there, I’m Oli, AdmitHub’s trusty virtual assistant.  What’s your first name?';
+    let welcomeReplies = 'Hey there, I’m Oli, AdmitHub’s very own Mascot.  What’s your first name?';
     newMessage(welcomeReplies, 'bot');
     setTimeout(() => {
       newMessage(`<input type="text" id="firstName" placeholder="First Name" class="inputbox" /> <button data-step="2" class="choice input startStep">Submit</button>`);
