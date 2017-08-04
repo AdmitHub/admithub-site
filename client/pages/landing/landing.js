@@ -41,7 +41,7 @@ FlowRouter.route('/:scrollTo', {
     });
     setTimeout(() => {
       $("#ah-site-content").animate({scrollTop: $("div.chatbot").offset().top - 120}, 400)
-    }, 1000)
+    }, 660)
   }
 });
 
