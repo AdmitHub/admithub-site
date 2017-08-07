@@ -29,6 +29,35 @@ FlowRouter.route('/press', {
   }
 });
 
+FlowRouter.route('/privacy', {
+  name: 'Privacy',
+
+  meta: {
+    pageTitle: 'Privacy'
+  },
+
+  action: function() {
+    BlazeLayout.render('Layout', {
+      pageContent: 'PrivacyPolicyPage',
+    });
+  }
+});
+
+FlowRouter.route('/terms', {
+  name: 'Terms',
+
+  meta: {
+    pageTitle: 'Terms of Service'
+  },
+
+  action: function() {
+    BlazeLayout.render('Layout', {
+      pageContent: 'TermsOfServicePage',
+    });
+  }
+});
+
+
 FlowRouter.route('/:scrollTo', {
   name: 'Home_scroll',
   meta: {
