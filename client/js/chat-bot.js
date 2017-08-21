@@ -443,9 +443,9 @@ export function chatBot() {
 
           case 'end':
             setTimeout(() => {
-              newMessage('Thanks, you rock!  We’ll be in touch soon.', 'bot');
+              newMessage("Thanks, you rock!  We'll be in touch. In the meantime, here's a 3-minute video showcasing our vision for AI-powered student services.", 'bot');
                 setTimeout(() => {
-                  newMessage('<img src="/images/tinafey66.gif" alt="High Five" />', 'bot');
+                  newMessage('<iframe width="560" height="315" src="https://www.youtube.com/embed/xAhIRi85zVc" frameborder="0" allowfullscreen></iframe>', 'bot');
                 }, 500);
               }, 500);
           break;
