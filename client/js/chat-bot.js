@@ -19,7 +19,7 @@ export function chatBot() {
             'title': 'I\'m still a student',
             'submenu': [
               {
-                'message': 'No worries.  We can always chat on Facebook. Just click the button below... ',
+                'message': 'No worries. We can always chat on Facebook. Just click the button below... ',
                 'title': 'Facebook Messenger',
                 'href': 'https://www.messenger.com/t/admithub/',
               },
