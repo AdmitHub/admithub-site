@@ -22,7 +22,35 @@
       "write_key": " "
     },
     "recaptcha_public": " ",
-    "eventReportDownloadTimeout": "48:0:0"
+    "eventReportDownloadTimeout": "48:0:0",
+    "sponsorImages": [
+      {
+        "name": "Georgia State University",
+        "imageUrl" : "https://s3-us-west-2.amazonaws.com/admithub-partner-logos/gsu-logo_nt.gif",
+        "siteUrl" : "http://www.gsu.edu/"
+      },
+      {
+        "name": "Allegheny College",
+        "imageUrl" : "https://s3-us-west-2.amazonaws.com/admithub-partner-logos/customlogo.jpg",
+        "siteUrl" : "http://allegheny.edu/"
+      },
+      {
+        "name": "West Texas A&M University",
+        "imageUrl" : "https://s3-us-west-2.amazonaws.com/admithub-partner-logos/west-texas-wtamu.jpg",
+        "siteUrl" : "www.wtamu.edu/"
+      },
+      {
+        "name": "Bowling Green State University",
+        "imageUrl" : "https://s3-us-west-2.amazonaws.com/admithub-partner-logos/bowling-green-bgsu.jpg",
+        "siteUrl" : "https://www.bgsu.edu/"
+      },
+      {
+        "name": "The Cooper Union",
+        "imageUrl" : "https://s3-us-west-2.amazonaws.com/admithub-partner-logos/Cooper_union_logo.png",
+        "siteUrl" : "http://www.cooper.edu/"
+      }
+    ],
+    "analyticsSettings": { }
   },
   "logging": {
     "level": "info",

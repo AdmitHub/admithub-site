@@ -163,10 +163,6 @@ Template.LandingPage.helpers({
            !Highschools.findOne({counselors: Meteor.userId()});
   },
 
-  sponsors: function() {
-    return Sponsors.find().fetch();
-  },
-
   testimonials: function() {
     return Testimonials.find().fetch();
   },
@@ -416,7 +412,6 @@ Template.LandingPage.events({
 });
 
 Template.Carousel.onCreated(function() {
-  this.subscribe("sponsors");
   this.autorun(function() {
     if (this.subscriptionsReady()) {
       Meteor.defer(function() {
@@ -442,7 +437,7 @@ Template.Carousel.onCreated(function() {
 
 Template.Carousel.helpers({
   sponsors: function() {
-    return Sponsors.find().fetch();
+    return Meteor.settings.public.sponsorImages;
   }
 });
 
