@@ -69,7 +69,7 @@ FlowRouter.route('/:scrollTo', {
       pageContent: 'LandingPage'
     });
     setTimeout(() => {
-      $("#ah-site-content").animate({scrollTop: $("div.chatbot").offset().top - 120}, 400)
+      $("#ah-site-content").animate({scrollTop: $(".ah-chatbot").offset().top - 50}, 600)
     }, 660)
   }
 });
