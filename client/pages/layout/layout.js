@@ -22,6 +22,10 @@ Template.Layout.onCreated(function() {
        $(window.top.$("iframe")['3']).hide()
        $(window.top.$("iframe")['2']).hide()
     },2500);
+    setTimeout(function(){
+       $(window.top.$("iframe")['3']).hide()
+       $(window.top.$("iframe")['2']).hide()
+    },5000);
 
   }
 
