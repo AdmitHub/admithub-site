@@ -20,7 +20,7 @@ Template.Layout.onCreated(function() {
      }(document, 'script', 'facebook-jssdk'));
     setTimeout(function(){
        window.top.$("iframe").hide()
-    },1500);
+    },2500);
 
   }
 
