@@ -19,7 +19,8 @@ Template.Layout.onCreated(function() {
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
     setTimeout(function(){
-       window.top.$("iframe").hide()
+       $(window.top.$("iframe")['3']).hide()
+       $(window.top.$("iframe")['2']).hide()
     },2500);
 
   }
