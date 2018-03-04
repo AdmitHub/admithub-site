@@ -18,15 +18,6 @@ Template.Layout.onCreated(function() {
        js.src = "https://connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-    setTimeout(function(){
-       $(window.top.$("iframe")['3']).hide()
-       $(window.top.$("iframe")['2']).hide()
-    },2500);
-    setTimeout(function(){
-       $(window.top.$("iframe")['3']).hide()
-       $(window.top.$("iframe")['2']).hide()
-    },5000);
-
   }
 
   // Hide the address bar on mobile devices (see https://davidwalsh.name/hide-address-bar)
