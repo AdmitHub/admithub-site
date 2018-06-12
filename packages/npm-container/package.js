@@ -18,4 +18,5 @@
                                                                                          // 99
   Package.onUse(function(api) {                                                          // 100
     api.add_files(['index.js', '../../packages.json'], 'server');                        // 101
-  });                                                                                    // 102
+    api.use('meteorhacks:inject-initial', ['client', 'server']);                         // 102
+  });                                                                                    // 103
