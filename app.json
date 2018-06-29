@@ -1,0 +1,31 @@
+{
+  "name": "admithub-site",
+  "scripts": {},
+  "env": {
+    "BUILDPACK_CLEAR_CACHE": {
+      "value": 0
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "METEOR_SETTINGS": {
+      "required": false
+    },
+    "MONGODB_URI": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
+    }
+  ]
+}
