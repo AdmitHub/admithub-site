@@ -3,7 +3,7 @@
   "scripts": {},
   "env": {
     "BUILDPACK_CLEAR_CACHE": {
-      "value": 0
+      "value": "0"
     },
     "HEROKU_APP_NAME": {
       "required": true
